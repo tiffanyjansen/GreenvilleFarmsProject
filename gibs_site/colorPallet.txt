@@ -1,0 +1,7 @@
+HEX: #b2b2b2
+
+HEX: #f4e1d2
+
+HEX: #f18973
+
+HEX: #bc5a45
