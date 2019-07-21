@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="site.css" rel="stylesheet">
+        <!--
+            No idea how this script works. Ask Tiff.
+        -->
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            $(function(){
+                $('a').each(function(){
+                    if ($(this).prop('href') == window.location.href) {
+                        $(this).addClass('active'); $(this).parents('li').addClass('active');
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+            <nav>
+                <ul id="navbar">
+                    <li>
+                        <a href="index.html">
+                            <b>
+                                Home
+                            </b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="references.html">
+                            <b>
+                                References
+                            </b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <b>
+                                About
+                            </b>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </body>
+    </html>
