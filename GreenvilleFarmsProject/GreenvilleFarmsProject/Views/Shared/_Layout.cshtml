@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,6 +14,7 @@
     <body>
         <nav>
             <ul id="navbar">
+@*<<<<<<< HEAD*@
                 <li id="home">
                     @Html.ActionLink("Home", "Index", "Home")
                 </li>
@@ -24,5 +27,30 @@
             </ul>
         </nav>
         @RenderBody()
+        <hr />
+        <footer>
+            @if (Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <p>
+                        &copy; @DateTime.Now.Year - Greenville Farms
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                    </p>
+                }
+            }
+            else
+            {
+                <p>
+                    &copy; @DateTime.Now.Year - Greenville Farms
+                    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                </p>
+            }
+        </footer>
     </body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </html>
