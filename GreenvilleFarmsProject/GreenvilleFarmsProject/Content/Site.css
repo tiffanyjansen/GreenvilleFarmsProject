@@ -1,5 +1,5 @@
 ﻿body {
-    font-size: 24px;
+    font-size: 16px;
     background-color: #fffbfe;
     color: #000000;
 }
@@ -29,7 +29,7 @@ ul#navbar li a:hover {
 }
 
 #navbar .active {
-    background-color: #daddd8;
+    background-color: #2a7221;
 }
 
 nav {
