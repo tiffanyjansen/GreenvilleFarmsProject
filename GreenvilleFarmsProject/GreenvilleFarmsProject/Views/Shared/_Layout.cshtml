@@ -2,23 +2,25 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@ViewBag.Title - My ASP.NET Application</title>
-        @Styles.Render("~/Content/Site.css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/navbar.js"></script>
+</head>
     <body>
         <nav>
             <ul id="navbar">
-                <li>
+                <li id="home">
                     @Html.ActionLink("Home", "Index", "Home")
                 </li>
-                <li>
+                <li id="contact">
                     @Html.ActionLink("Contact", "Contact", "Home")
                 </li>
-                <li>
+                <li id="about">
                     @Html.ActionLink("About", "About", "Home")
                 </li>
             </ul>
