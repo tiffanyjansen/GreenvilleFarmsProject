@@ -1,10 +1,12 @@
-﻿body {
+﻿body 
+{
     font-size: 16px;
     background-color: #fffbfe;
     color: #000000;
 }
 
-ul#navbar {
+ul#navbar 
+{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -12,11 +14,13 @@ ul#navbar {
     background-color: #2b2118;
 }
 
-ul#navbar li {
+ul#navbar li 
+{
     float: left;
 }
 
-ul#navbar li a {
+ul#navbar li a 
+{
     display: block;
     color: #fffbfe;
     text-align: center;
@@ -24,15 +28,18 @@ ul#navbar li a {
     text-decoration: none;
 }
 
-ul#navbar li a:hover {
+ul#navbar li a:hover 
+{
     background-color: #daddd8;
 }
 
-#navbar .active {
+#navbar .active 
+{
     background-color: #2a7221;
 }
 
-nav {
+nav 
+{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -40,5 +47,19 @@ nav {
     background-image: url(Images/Barn.jpg);
     background-position: 0% 27%;
     min-height: 400px;
-    color: #2b2118;
+    color: #2b2118;    
+}
+    .image-bar h1 {
+        padding-right: 6px;
+        padding-left: 6px;
+        padding-top: 2px;
+    }
+.Log-In a {
+    font: 16px;
+    text-decoration: none;
+    background-color: #2b2118;
+    color: #fffbfe;
+    text-align: center;
+    padding: 14px 16px;
+    float: right;
 }
