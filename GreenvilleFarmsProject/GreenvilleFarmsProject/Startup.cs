@@ -3,6 +3,7 @@ using Owin;
 using GreenvilleFarmsProject.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Diagnostics;
 
 [assembly: OwinStartupAttribute(typeof(GreenvilleFarmsProject.Startup))]
 namespace GreenvilleFarmsProject
@@ -27,11 +28,10 @@ namespace GreenvilleFarmsProject
 
             //Get the password and stuff from the external file.
             string password = System.Web.Configuration.WebConfigurationManager.AppSettings["userPassword"];
-            string name = System.Web.Configuration.WebConfigurationManager.AppSettings["userName"];
             string email = System.Web.Configuration.WebConfigurationManager.AppSettings["userEmail"];
 
             //Create the user.
-            var user = new ApplicationUser { Email = email, UserName = name };
+            var user = new ApplicationUser { Email = email, UserName = email };
             var checkUser = UserManager.Create(user, password);
             return checkUser.Succeeded;
         }

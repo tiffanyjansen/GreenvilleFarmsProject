@@ -3,11 +3,8 @@
 }
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
-<div class="container">
-    <div class="image-bar">
-        <h1>Greenville Farms</h1>
-    </div>
-</div>
+
+<!--Log In/Log Off Button-->
 <div class="Log-In">
     @if (Request.IsAuthenticated)
     {
@@ -24,4 +21,11 @@
         @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
     }
 </div>
+
+<div class="container">
+    <div class="image-bar">
+        <h1>Greenville Farms</h1>
+    </div>
+</div>
+
 
