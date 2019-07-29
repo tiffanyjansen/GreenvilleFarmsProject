@@ -1,6 +1,5 @@
 ﻿/* The Styling for the Site. */
-body 
-{
+body {
     font-size: 16px;
     background-color: #fffbfe;
     color: #000000;
@@ -8,8 +7,7 @@ body
     padding: 0;
 }
 
-ul#navbar 
-{
+ul#navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -17,32 +15,27 @@ ul#navbar
     background-color: #2b2118;
 }
 
-ul#navbar li 
-{
+ul#navbar li {
     float: left;
 }
 
-ul#navbar li a 
-{
+ul#navbar li a {
     display: block;
     color: #fffbfe;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-    ul#navbar li a:hover 
-    {
+    ul#navbar li a:hover {
         background-color: #daddd8;
         color: #2b2118;
     }
 
-#navbar .active 
-{
+#navbar .active {
     background-color: #2a7221;
 }
 
-nav 
-{
+nav {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -58,9 +51,12 @@ nav
     background-position: 0% 27%;
     min-height: 500px;
     color: #2b2118;
-    margin: 10px;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 55px;
     border: none;
     padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
     .image-bar h1 {
         padding-right: 6px;
@@ -75,20 +71,17 @@ nav
     background-color: #2b2118;
     color: #fffbfe;
     text-align: center;
-    padding: 14px 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 14px;
+    padding-bottom: 0;
     float: right;
     position: absolute;
     top: 0;
     right: 0;
+    margin: 0;
 }
     .Log-In a:hover {
         background-color: #daddd8;
         color: #2b2118;
     }
-
-/*footer {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-}*/
