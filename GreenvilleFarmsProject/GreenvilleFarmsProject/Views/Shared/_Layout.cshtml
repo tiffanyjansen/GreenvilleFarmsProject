@@ -5,51 +5,34 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/Site.css")
+    <title>@ViewBag.Title - Greenville Farms</title>
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/navbar.js"></script>
 </head>
-    <body>
-        <nav>
-            <ul id="navbar">
-                <li id="home">
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li id="contact">
-                    @Html.ActionLink("Contact", "Contact", "Home")
-                </li>
-                <li id="about">
-                    @Html.ActionLink("About", "About", "Home")
-                </li>
-            </ul>
-        </nav>
-        @RenderBody()
-        <hr />
-        <footer>
-            @if (Request.IsAuthenticated)
-            {
-                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <p>
-                        &copy; @DateTime.Now.Year - Greenville Farms
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                    </p>
-                }
-            }
-            else
-            {
-                <p>
-                    &copy; @DateTime.Now.Year - Greenville Farms
-                    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-                </p>
-            }
-        </footer>
-    </body>
+<body>
+    <nav>
+        <ul id="navbar">
+            <li id="home">
+                @Html.ActionLink("Home", "Index", "Home")
+            </li>
+            <li id="contact">
+                @Html.ActionLink("Contact", "Contact", "Home")
+            </li>
+            <li id="about">
+                @Html.ActionLink("About", "About", "Home")
+            </li>
+        </ul>
+    </nav>
+    @RenderBody()
+    <br /><br /><br />
+    <hr />
+    <footer>
+        &copy; @DateTime.Now.Year - Greenville Farms
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+</body>
 </html>
