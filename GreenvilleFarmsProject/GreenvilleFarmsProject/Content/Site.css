@@ -39,6 +39,7 @@ nav {
 .image-bar {
     background-image: url(Images/Barn.jpg);
     background-position: 0% 30%;
+    width: 100%;
     min-height: 150px;
     color: #2b2118;
 }
