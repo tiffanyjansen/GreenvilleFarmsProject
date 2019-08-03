@@ -23,7 +23,8 @@
             <li id="about">
                 @Html.ActionLink("About", "About", "Home")
             </li>
-        </ul>
+            @Html.Partial("_LoginPartial")
+        </ul>        
     </nav>
     @RenderBody()
     <br /><br /><br />
