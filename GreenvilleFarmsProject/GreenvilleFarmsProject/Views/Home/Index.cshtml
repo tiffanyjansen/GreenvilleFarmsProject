@@ -4,26 +4,15 @@
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
 
-<!--Log In/Log Off Button-->
-<div class="Log-In">
-    @if (Request.IsAuthenticated)
-    {
-        <!--If there is a user logged in, show the "Log Off" button.-->
-        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-        {
-            @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-        }
-    }
-    else
-    {
-        <!--Otherwise, show the "Log In" button.-->
-        @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    }
+<div class="image-bar">
+    <h1>Greenville Farms</h1>
 </div>
 
 <div class="container">
-    <div class="image-bar">
-        <h1>Greenville Farms</h1>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h2>Some Content</h2>
+            <p>Some stuff.</p>
+        </div>
     </div>
 </div>
