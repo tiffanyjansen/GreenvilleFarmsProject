@@ -4,6 +4,9 @@
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+
 <!--Banner and Title-->
 <div class="image-bar">
     <h1>Greenville Farms</h1>
@@ -12,6 +15,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-xs-12">
+            <div class="fb-page" data-href="https://www.facebook.com/GreenvilleFarms/" data-tabs="timeline" data-width="500" data-height="450" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GreenvilleFarms/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GreenvilleFarms/">Greenville Farms</a></blockquote></div>
+            @*<br />
+            <a href="https://www.facebook.com/GreenvilleFarms/" target="_blank">Catch us on Facebook!</a>*@
         </div>
         <div class="col-md-6 col-xs-12">
             <!--This is where the map is-->
@@ -46,21 +52,21 @@
         // The html for the 'popup' box
         var contentString = '<div class="card border-warning">' +
             '<div class="card-body" style="text-align:center;">' +
-                '<h4>Greenville Farms</h4>' +             
-                '<h7>43500 NW Greenville Rd, Forest Grove, OR 97116</h7>' +
-                '<br>' +
-                '<a href="https://goo.gl/maps/RGwWQKeWBCwYdLaCA" target="_blank">Get Directions</a>'
-            '</div>' +
+            '<h4>Greenville Farms</h4>' +
+            '<h7>43500 NW Greenville Rd, Forest Grove, OR 97116</h7>' +
+            '<br>' +
+            '<a href="https://goo.gl/maps/RGwWQKeWBCwYdLaCA" target="_blank">Get Directions</a>'
+        '</div>' +
             '</div>';
 
         // The 'popup' box
         var infowindow = new google.maps.InfoWindow({
-          content: contentString
+            content: contentString
         });
 
         // Add listener for when a user clicks the marker.
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
         });
     }
 </script>
