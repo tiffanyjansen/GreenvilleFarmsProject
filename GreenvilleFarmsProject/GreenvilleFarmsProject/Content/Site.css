@@ -4,7 +4,7 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    /*padding: 0;*/
+    height: 100%;
     max-width: 4000px;
     min-width: 900px;
 }
@@ -44,6 +44,7 @@ nav {
 .container {
     padding: 10px;
     margin: 10px;
+    height: 100%;
 }
 
 /*The image on the home page*/
@@ -83,3 +84,9 @@ nav {
         background-color: #daddd8;
         color: #2b2118;
     }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
