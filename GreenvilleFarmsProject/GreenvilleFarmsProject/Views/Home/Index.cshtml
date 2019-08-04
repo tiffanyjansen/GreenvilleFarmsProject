@@ -11,8 +11,47 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-xs-12">
-            <h2>Some Content</h2>
-            <p>Some stuff.</p>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <h2>You can find us here:</h2>
+            <!--This is where the map will go. (I hope...)-->
+            <div id="map"></div>
         </div>
     </div>
 </div>
+
+<script>
+    var map;
+    function initMap() {
+        // The location of Farm
+        var farm = {lat: 45.592590, lng: -123.125160};
+        // The map, centered at Farm
+        var map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center: farm });
+
+        var icon = "/Content/Images/tractor.svg";
+
+        // The marker, positioned at Farm
+        var marker = new google.maps.Marker({
+            position: farm,
+            map: map,
+            icon: icon,
+            title: 'Greenville Farms (Oregon)'
+        });
+
+        var contentString = '<div class="card border-warning">' +
+            '<div class="card-body">' +
+                '<h4 style="text-align: center;">Greenville Farms</h4>' +             
+                '<h7>43500 NW Greenville Rd, Forest Grove, OR 97116</h7>' +            
+            '</div>' +
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+    }
+</script>
+<script src="@ViewBag.googleAPI" async defer></script>
