@@ -10,11 +10,17 @@ namespace GreenvilleFarmsProject.Controllers
     {
         public ActionResult Index()
         {
+            string url = "https://maps.googleapis.com/maps/api/js?key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
+            url += "&callback=initMap";
+            ViewBag.googleAPI = url;
             return View();
         }
 
         public ActionResult About()
         {
+            string url = "https://maps.googleapis.com/maps/api/js?key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
+            url += "&callback=initMap";
+            ViewBag.googleAPI = url;
             return View();
         }
 

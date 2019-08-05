@@ -2,13 +2,28 @@
     ViewBag.Title = "About";
 }
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <h1>Greenville Farms Oregon</h1>
-            <p>We are a small farm located in Forest Grove, OR.</p>
+        <div class="col-md-12">
+            <!--Title.-->
+            <h1 style="text-align: center;">Greenville Farms Oregon</h1>
+            <br />
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <!--This is where the text for the about page will be.-->
+                    <p>We are a small family farm outside of Banks Oregon about 25 miles from Portland. For more than 14 years we have been bringing sustainably grown veggies, eggs, jams and goodies from our farm to you at local Farmers Markets and through our CSA (Community Supported Agriculture).</p>
+                    <!--Adding map here-->
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <!--This is where the picture of the dog on the tractor will be.-->
+                    <div id="tractorImage"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
 </div>
+
+<!--Google Map API Scripts-->
+<script src="~/Scripts/map.js"></script>
+<script src="@ViewBag.googleAPI" async defer></script>

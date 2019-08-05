@@ -1,29 +1,27 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
 
-<!--Log In/Log Off Button-->
-<div class="Log-In">
-    @if (Request.IsAuthenticated)
-    {
-        <!--If there is a user logged in, show the "Log Off" button.-->
-        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-        {
-            @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-        }
-    }
-    else
-    {
-        <!--Otherwise, show the "Log In" button.-->
-        @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    }
+<!--Banner and Title-->
+<div class="image-bar">
+    <h1>Greenville Farms</h1>
 </div>
 
-<div class="container">
-    <div class="image-bar">
-        <h1>Greenville Farms</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <!--This is where the map is-->
+            <h2>You can find us here:</h2>
+            <div id="map"></div>
+        </div>
     </div>
+    <!--If we want another row it would go here.-->
 </div>
+
+<!--Google Map API Scripts-->
+<script src="~/Scripts/map.js"></script>
+<script src="@ViewBag.googleAPI" async defer></script>
