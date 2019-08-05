@@ -44,16 +44,17 @@ nav {
 
 /*The image on the home page*/
 .image-bar {
+    overflow: hidden;
     background-image: url(Images/Barn.jpg);
-    background-position: 0% 30%;
+    background-position: 10% 3%;
     width: 100%;
     min-height: 150px;
     background-position: 0% 27%;
     min-height: 500px;
     color: #2b2118;
-    margin-left: 75px;
+    /*margin-left: 75px;
     margin-right: 75px;
-    margin-top: 55px;
+    margin-top: 55px;*/
     border: none;
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -65,15 +66,17 @@ nav {
 
 /*The login/log out button styling*/
 .Log-In a {
+    /*display: block;*/
     font: 16px;
     text-decoration: none;
     background-color: #2b2118;
     color: #fffbfe;
     text-align: center;
-    padding-left: 16px;
+    padding: 14px 16px;
+    /*padding-left: 16px;
     padding-right: 16px;
     padding-top: 14px;
-    padding-bottom: 0;
+    padding-bottom: 0;*/
     float: right;
     position: absolute;
     top: 0;
