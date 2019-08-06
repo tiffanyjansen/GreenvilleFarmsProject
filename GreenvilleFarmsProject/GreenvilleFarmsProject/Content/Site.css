@@ -4,7 +4,6 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    height: 100%;
     max-width: 4000px;
     min-width: 900px;
 }
@@ -51,7 +50,7 @@ nav {
 /*The image on the home page*/
 .image-bar {
     background-image: url(Images/Barn.jpg);
-    background-position: 0% 27%;
+    background-position: 50% 27%;
     background-color: #000000;
     max-width: 100%;
     height: 240px;
@@ -62,22 +61,22 @@ nav {
 }
 
     .image-bar h1 {
-        padding-right: 6px;
-        padding-left: 6px;
-        padding-top: 2px;
+        text-align: center;
+        padding-top: 75px;
+        color: #ffffff;
     }
 
 #map {
-    height: 400px;
-    width: 100%;
+    width: 600px;
+    height: 450px;
 }
 
 #tractorImage {
     background-image: url(Images/Tractor_Dog.jpg);
     background-position: 65% 30%;
     background-color: #2b2118;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 450px;
     border: none;
     padding: 0;
     background-repeat: no-repeat;
