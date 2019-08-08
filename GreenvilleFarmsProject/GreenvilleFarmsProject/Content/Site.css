@@ -4,8 +4,6 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    max-width: 4000px;
-    min-width: 900px;
 }
 
 /*navbar*/
@@ -42,6 +40,11 @@ nav {
     color: #000000;
 }
 /*end of navbar*/
+
+.btn-light {
+    background-color: #2a7221 !important;
+    color: #ffffff;
+}
 
 .container {
     padding: 10px;
