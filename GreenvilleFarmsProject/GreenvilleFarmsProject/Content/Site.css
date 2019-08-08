@@ -8,39 +8,40 @@ body {
     min-width: 900px;
 }
 
-ul#navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #2b2118;
-    width: 100%;
+/*navbar*/
+.bg-light {
+    background-color: #817f75 !important;
 }
 
-    ul#navbar li {
-        float: left;
-    }
+.navbar {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
 
-        ul#navbar li a {
-            display: block;
-            color: #fffbfe;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+.nav-item {
+    font-size: 24px;
+}
 
-            ul#navbar li a:hover {
-                background-color: #daddd8;
-                color: #2b2118;
-            }
-
-#navbar .active {
-    background-color: #2a7221;
+.nav-link {
+    color: #ffffff;
+    width: 150px;
 }
 
 nav {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.navbar-nav a:hover {
+    background-color: #f8fff4;
+    color: #000000;
+}
+
+.active {
+    background-color: #2a7221;
+    color: #000000;
+}
+/*end of navbar*/
 
 .container {
     padding: 10px;
