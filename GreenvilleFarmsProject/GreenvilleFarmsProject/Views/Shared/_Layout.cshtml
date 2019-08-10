@@ -12,19 +12,28 @@
     <script src="~/Scripts/navbar.js"></script>
 </head>
 <body>
-    <nav>
-        <ul id="navbar">
-            <li id="home">
-                @Html.ActionLink("Home", "Index", "Home")
+    <nav class="navbar navbar-expand-md text-center bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                @Html.ActionLink("HOME", "Index", "Home", null, new
+                {
+                    @class = "nav-link"
+                })
             </li>
-            <li id="contact">
-                @Html.ActionLink("Contact", "Contact", "Home")
+            <li class="nav-item">
+                @Html.ActionLink("CONTACT", "Contact", "Home", null, new
+                {
+                    @class = "nav-link"
+                })
             </li>
-            <li id="about">
-                @Html.ActionLink("About", "About", "Home")
+            <li class="nav-item">
+                @Html.ActionLink("ABOUT", "About", "Home", null, new
+                {
+                    @class = "nav-link"
+                })
             </li>
             @Html.Partial("_LoginPartial")
-        </ul>        
+        </ul>
     </nav>
     @RenderBody()
     <hr />

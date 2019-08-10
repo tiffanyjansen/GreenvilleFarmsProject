@@ -4,42 +4,44 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    height: 100%;
     max-width: 4000px;
     min-width: 900px;
 }
 
-ul#navbar {
-    list-style-type: none;
+/*navbar*/
+.bg-light {
+    background-color: #817f75 !important;
+}
+
+.navbar {
     margin: 0;
+    border: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #2b2118;
-    width: 100%;
 }
 
-ul#navbar li {
-    float: left;
+.nav-item {
+    font-size: 24px;
 }
 
-ul#navbar li a {
-    display: block;
-    color: #fffbfe;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}   ul#navbar li a:hover {
-        background-color: #daddd8;
-        color: #2b2118;
-    }
-
-#navbar .active {
-    background-color: #2a7221;
+.nav-link {
+    color: #ffffff;
+    width: 150px;
 }
 
 nav {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.navbar-nav a:hover {
+    background-color: #f8fff4;
+    color: #000000;
+}
+
+.active {
+    background-color: #2a7221;
+    color: #000000;
+}
+/*end of navbar*/
 
 .container {
     padding: 10px;
@@ -49,42 +51,35 @@ nav {
 /*The image on the home page*/
 .image-bar {
     background-image: url(Images/Barn.jpg);
-    background-position: 0% 27%;
+    background-position: 50% 27%;
     background-color: #000000;
-    max-width:100%;
+    max-width: 100%;
     height: 240px;
     border: none;
     padding: 0;
     background-repeat: no-repeat;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}   .image-bar h1 {
-        padding-right: 6px;
-        padding-left: 6px;
-        padding-top: 2px;
-    }
+}
 
-/*The login/log out button styling*/
-.Log-In a {
-    font: 16px;
-    text-decoration: none;
-    background-color: #2b2118;
-    color: #fffbfe;
-    text-align: center;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 14px;
-    padding-bottom: 0;
-    float: right;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-}   .Log-In a:hover {
-        background-color: #daddd8;
-        color: #2b2118;
+    .image-bar h1 {
+        text-align: center;
+        padding-top: 75px;
+        color: #ffffff;
     }
 
 #map {
-    height: 400px;
-    width: 100%;
+    width: 600px;
+    height: 450px;
+}
+
+#tractorImage {
+    background-image: url(Images/Tractor_Dog.jpg);
+    background-position: 65% 30%;
+    background-color: #2b2118;
+    width: 600px;
+    height: 450px;
+    border: none;
+    padding: 0;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
