@@ -12,5 +12,9 @@
 }
 else
 {
-    <li id="nav-right" class="nav-item">@Html.ActionLink("LOGIN", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link"})</li>
+    <li id="nav-right" class="nav-item">
+        <strong>
+            @Html.ActionLink("LOGIN", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link"})
+        </strong>
+    </li>
 }
