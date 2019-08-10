@@ -4,8 +4,6 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    max-width: 4000px;
-    min-width: 900px;
 }
 
 /*navbar*/
@@ -40,6 +38,11 @@ nav {
 .active {
     background-color: #2a7221;
     color: #000000;
+}
+
+li#nav-right
+{
+    float: right !important;
 }
 /*end of navbar*/
 
