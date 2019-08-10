@@ -46,6 +46,11 @@ nav {
     color: #ffffff;
 }
 
+.placeholder
+{
+    padding:10px;
+}
+
 .container {
     padding: 10px;
     margin: 10px;
