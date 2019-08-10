@@ -40,6 +40,16 @@ nav {
 }
 /*end of navbar*/
 
+.btn-light {
+    background-color: #2a7221 !important;
+    color: #ffffff;
+}
+
+.placeholder
+{
+    padding:10px;
+}
+
 .container {
     padding: 10px;
     margin: 10px;
