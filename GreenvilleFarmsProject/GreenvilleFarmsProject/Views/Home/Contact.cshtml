@@ -20,7 +20,6 @@
                     @class = "form-control",
                     placeholder = "Your name..."
                 })
-                @Html.ValidationMessageFor(x => x.Name)
             </div><!--/form-group-->
             <div class="form-group">
                 <label>
@@ -60,6 +59,7 @@
                 <input class="btn btn-light" type="submit" value="Send Email" />
             </div>
         }
+        </div><!--/ailgn-cotent-center-->
     </div><!--/container-fluid-->
     @section scripts {
         @Scripts.Render("~/bundles/jqueryval")

@@ -42,7 +42,7 @@ namespace GreenvilleFarmsProject.Controllers
         /// The contactForm is an object that holds the information from the user obtained through the Contact.cshtml View, and the ContactForm.cs model.
         /// </param>
         /// <returns>
-        /// If the email is sent, it returns the Sent.cshtml View. Otherwise, it returns the (i don't know what it returns lol haaaaalp!)
+        /// If the email is sent, it returns the Sent.cshtml View. Otherwise, it returns the Contact.cshtml.
         /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,7 +51,7 @@ namespace GreenvilleFarmsProject.Controllers
             if (ModelState.IsValid)
             {
                 var body = "<p>Email from: " + 
-                    contactForm.Name + "(" + 
+                    contactForm.Name + " (" + 
                     contactForm.Email + ")</p><p>Subject: " + 
                     contactForm.Subject + "</p><p>Message:\n" + 
                     contactForm.EmailContents + "</p>"; 
@@ -76,6 +76,7 @@ namespace GreenvilleFarmsProject.Controllers
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     await smtp.SendMailAsync(message);
                     return RedirectToAction("Sent");
+
                 }
             }
             return View(contactForm);
