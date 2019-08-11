@@ -2,12 +2,15 @@
 @{
     ViewBag.Title = "Sent";
 }
-
 <div class="container-fluid">
-    <div class="text-center">
+    <div class="jumbotron bg-tanLight text-center">
         <h4>
-            Your message has been sent
+            Your message has successfully been sent!
         </h4>
-    </div><!--/text-center-->
+        @Html.ActionLink("Done", "Index", "Home", null, new
+        {
+            @class = "btn btn-red"
+        })
+    </div><!--/jumbotron bg-tan text-centerr-->
 </div><!--/container-fluid-->
 

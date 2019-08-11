@@ -41,9 +41,25 @@ nav {
 }
 /*end of navbar*/
 
-.btn-light {
+.jumbotron
+{
+    margin-top: 20px;
+}
+
+.btn-green {
     background-color: #2a7221 !important;
     color: #ffffff;
+}
+
+.btn-red
+{
+    background-color: #7c0a02;
+    color: #ffffff;
+}
+
+.bg-tanLight
+{
+    background-color: #e1dfd5;
 }
 
 .placeholder
