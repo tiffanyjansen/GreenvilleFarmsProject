@@ -2,11 +2,10 @@
 @{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
 <div class="container-fluid">
-    <div class="align-content-center">
+        <h2>
+            Send us a message
+        </h2>
         @using (Html.BeginForm())
         {
             @Html.ValidationSummary()
@@ -56,10 +55,9 @@
                 @Html.ValidationMessageFor(x => x.EmailContents)
             </div><!--/form-group-->
             <div>
-                <input class="btn btn-light" type="submit" value="Send Email" />
+                <input class="btn btn-green" type="submit" value="Send Email" />
             </div>
         }
-        </div><!--/ailgn-cotent-center-->
     </div><!--/container-fluid-->
     @section scripts {
         @Scripts.Render("~/bundles/jqueryval")
