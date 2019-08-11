@@ -6,11 +6,59 @@ body {
     margin: 0;
 }
 
-/*navbar*/
-.bg-light {
-    background-color: #817f75 !important;
+/*new bootstrap colors*/
+.btn-green{
+    background-color: #2a7221;
+    color: #ffffff;
+}
+    .btn-green:hover {
+        color: #000000;
+        background-color: #f8fff4;
+        border-color: #000000;
+    }
+
+.btn-red {
+    background-color: #7c0a02;
+    color: #ffffff;
 }
 
+.btn-grey {
+    background-color: #817f75;
+    color: #000000;
+}
+
+.btn-cream {
+    background-color: #f8fff4;
+    color: #000000;
+}
+
+.btn-brown {
+    background-color: #250902;
+    color: #ffffff;
+}
+
+.bg-green {
+    background-color: #2a7221;
+}
+
+.bg-red {
+    background-color: #7c0a02;
+}
+
+.bg-grey {
+    background-color: #817f75;
+}
+
+.bg-cream {
+    background-color: #f8fff4;
+}
+
+.bg-brown {
+    background-color: #250902;
+}
+/*end of bootstrap colors*/
+
+/*navbar*/
 .navbar {
     margin: 0;
     border: 0;
@@ -44,22 +92,6 @@ nav {
 .jumbotron
 {
     margin-top: 20px;
-}
-
-.btn-green {
-    background-color: #2a7221 !important;
-    color: #ffffff;
-}
-
-.btn-red
-{
-    background-color: #7c0a02;
-    color: #ffffff;
-}
-
-.bg-tanLight
-{
-    background-color: #e1dfd5;
 }
 
 .placeholder
