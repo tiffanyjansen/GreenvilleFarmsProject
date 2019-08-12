@@ -14,6 +14,7 @@ namespace GreenvilleFarmsProject.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Key = System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
             return View();
         }
 
