@@ -13,6 +13,8 @@ body {
     background-color: #817f75 !important;
 }
 
+
+
 .navbar {
     margin: 0;
     border: 0;
@@ -40,6 +42,10 @@ nav {
 .active {
     background-color: #2a7221;
     color: #000000;
+}
+
+.border-success {
+    border-color: #2a7221 !important;
 }
 /*end of navbar*/
 

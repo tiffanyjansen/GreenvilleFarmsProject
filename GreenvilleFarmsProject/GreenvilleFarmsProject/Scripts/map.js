@@ -18,8 +18,15 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 11, center: center });
 
     // Get the tractor icon
-    var farmIcon = "/Content/Images/tractor.svg";
+    //var farmIcon = "/Content/Images/tractor.svg";
     var fruitIcon = "/Content/Images/American-Barn.svg";
+
+    var farmIcon = {
+        url: "/Content/Images/tractor.svg", // url
+        scaledSize: new google.maps.Size(50, 25), // size
+        //origin: new google.maps.point(0, 0), // origin
+        //anchor: new google.maps.point(anchor_left, anchor_top) // anchor 
+    };
 
     // The marker, positioned at the farm, with the tractor icon.
     var farmMarker = new google.maps.Marker({
@@ -36,7 +43,7 @@ function initMap() {
     });
 
     // The html for the 'popup' box
-    var farmString = '<div class="card border-warning">' +
+    var farmString = '<div class="card border-success">' +
         '<div class="card-body" style="text-align:center;">' +
         '<h4>Greenville Farms</h4>' +
         '<h7>43500 NW Greenville Rd, Forest Grove, OR 97116</h7>' +
@@ -44,7 +51,7 @@ function initMap() {
         '<a href="https://goo.gl/maps/RGwWQKeWBCwYdLaCA" target="_blank">Get Directions</a>'
     '</div>' +
         '</div>';
-    var fruitString = '<div class="card border-warning">' +
+    var fruitString = '<div class="card border-success">' +
         '<div class="card-body" style="text-align:center;">' +
         '<h4>Maller\'s Mini Barn</h4>' +
         '<h7>HWY 26 At NW Maller Rd, 97106 Banks, United States</h7>' +
