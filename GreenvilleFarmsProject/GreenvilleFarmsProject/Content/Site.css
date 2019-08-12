@@ -4,17 +4,61 @@ body {
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
-    max-width: 4000px;
-    min-width: 900px;
 }
+
+/*new bootstrap colors*/
+.btn-green{
+    background-color: #2a7221;
+    color: #ffffff;
+}
+    .btn-green:hover {
+        color: #000000;
+        background-color: #f8fff4;
+        border-color: #000000;
+    }
+
+.btn-red {
+    background-color: #7c0a02;
+    color: #ffffff;
+}
+
+.btn-grey {
+    background-color: #817f75;
+    color: #000000;
+}
+
+.btn-cream {
+    background-color: #f8fff4;
+    color: #000000;
+}
+
+.btn-brown {
+    background-color: #250902;
+    color: #ffffff;
+}
+
+.bg-green {
+    background-color: #2a7221;
+}
+
+.bg-red {
+    background-color: #7c0a02;
+}
+
+.bg-grey {
+    background-color: #817f75;
+}
+
+.bg-cream {
+    background-color: #f8fff4;
+}
+
+.bg-brown {
+    background-color: #250902;
+}
+/*end of bootstrap colors*/
 
 /*navbar*/
-.bg-light {
-    background-color: #817f75 !important;
-}
-
-
-
 .navbar {
     margin: 0;
     border: 0;
@@ -41,13 +85,22 @@ nav {
 
 .active {
     background-color: #2a7221;
-    color: #000000;
 }
 
 .border-success {
     border-color: #2a7221 !important;
 }
 /*end of navbar*/
+
+.jumbotron
+{
+    margin-top: 20px;
+}
+
+.placeholder
+{
+    padding:10px;
+}
 
 .container {
     padding: 10px;

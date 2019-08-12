@@ -1,17 +1,64 @@
-﻿@{
+﻿@model GreenvilleFarmsProject.Models.ContactForm
+@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="container-fluid">
+        <h2>
+            Send us a message
+        </h2>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label>
+                    Name:
+                </label>
+                @Html.TextBoxFor(x => x.Name, new
+                {
+                    @class = "form-control",
+                    placeholder = "Your name..."
+                })
+            </div><!--/form-group-->
+            <div class="form-group">
+                <label>
+                    Email:
+                </label>
+                @Html.TextBoxFor(x => x.Email, new
+                {
+                    @class = "form-control",
+                    placeholder = "Your email address..."
+                })
+                @Html.ValidationMessageFor(x => x.Email)
+            </div><!--/form-group-->
+            <div class="form-group">
+                <label>
+                    Subject:
+                </label>
+                @Html.TextBoxFor(x => x.Subject, new
+                {
+                    @class = "form-control",
+                    placeholder = "Subject...",
+                })
+                @Html.ValidationMessageFor(x => x.Subject)
+            </div><!--/form-group-->
+            <div class="form-group">
+                <label>
+                    Message:
+                </label>
+                @Html.TextAreaFor(x => x.EmailContents, new
+                {
+                    @class = "form-control",
+                    placeholder = "Message...",
+                    rows = 3
+                })
+                @Html.ValidationMessageFor(x => x.EmailContents)
+            </div><!--/form-group-->
+            <div>
+                <input class="btn btn-green" type="submit" value="Send Email" />
+            </div>
+        }
+    </div><!--/container-fluid-->
+    @section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
