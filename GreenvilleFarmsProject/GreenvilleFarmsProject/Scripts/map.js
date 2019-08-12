@@ -10,25 +10,29 @@ function initMap() {
     var farm = { lat: 45.592590, lng: -123.125160 };
     var fruit = { lat: 45.624370, lng: -123.083850 };
 
+    //Get the middle of the farm and fruit stand.
     var lat = (45.592590 + 45.624370) / 2;
     var lng = (-123.125160 + -123.083850) / 2;
     var center = { lat: lat, lng: lng };
 
-    // The map, centered at the farm
+    // The map, centered at the middle of the farm and the fruit stand
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 11, center: center });
 
-    // Get the tractor icon
-    //var farmIcon = "/Content/Images/tractor.svg";
-    var fruitIcon = "/Content/Images/American-Barn.svg";
-
+    // Get the icons
     var farmIcon = {
         url: "/Content/Images/tractor.svg", // url
         scaledSize: new google.maps.Size(50, 25), // size
         //origin: new google.maps.point(0, 0), // origin
         //anchor: new google.maps.point(anchor_left, anchor_top) // anchor 
     };
+    var fruitIcon = {
+        url: "/Content/Images/American-Barn.png", // url
+        scaledSize: new google.maps.Size(45, 50), // size
+        //origin: new google.maps.point(0, 0), // origin
+        //anchor: new google.maps.point(anchor_left, anchor_top) // anchor 
+    };
 
-    // The marker, positioned at the farm, with the tractor icon.
+    // The markers, positioned where they belong.
     var farmMarker = new google.maps.Marker({
         position: farm,
         map: map,
