@@ -1,26 +1,36 @@
-﻿@{
+﻿@model IEnumerable<GreenvilleFarmsProject.Models.Review>
+@{
     ViewBag.Title = "Home";
 }
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
 
 <!--Banner and Title-->
-<div class="image-bar"">
+<div class="image-bar" ">
     <h1>Greenville Farms</h1>
 </div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 col-xs-12">
+        <div class="col-md-9"></div>
+        <div class="col-md-3 col-xs-12">
+            <br />
             <!--Google Reviews will (hopefully) go here-->
-            <div id="reviews">
-                <h2>Google Reviews:</h2>
+            <div class="card border-green">
+                <div class="card-header bg-green" style="color:#ffffff;">
+                    <h4>Google Reviews:</h4>
+                </div>
+                <div class="card-body border-green">
+                    @foreach (var review in Model)
+                    {
+                        <p><strong>@Html.DisplayNameFor(model => model.author_name): </strong>@Html.DisplayFor(modelItem => review.author_name)</p>
+                        <p><strong>@Html.DisplayNameFor(model => model.rating): </strong>@Html.DisplayFor(modelItem => review.rating)</p>
+                        <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
+                        <p>@Html.DisplayFor(modelItem => review.text)</p>
+                    }
+                </div>
             </div>
         </div>
     </div>
-    <!--If we want another row it would go here.-->
+    <!--If we want another row it <p> go here.-->
 </div>
-
-@section scripts {
-    <script src="~/Scripts/reviews.js" type="text/javascript"></script>
-}

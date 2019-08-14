@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
 using System.Net.Mail;
 using GreenvilleFarmsProject.Models;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace GreenvilleFarmsProject.Controllers
 {
@@ -14,8 +20,50 @@ namespace GreenvilleFarmsProject.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Key = System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
-            return View();
+            string key = System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
+            Review[] reviews = getReviews(key);
+            IEnumerable<Review> list = new List<Review>(reviews);
+            return View(list);
+        }
+
+        private Review[] getReviews(string key)
+        {
+            //Build URL for GET request to Google's Place Details API, including key and parameters
+            string url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + "ChIJjabqtVQclVQR3B7E_iqiahQ" + "&fields=reviews&key=" + key;           
+
+            //Get the response string by accessing the site and reading it all the way through.
+            string responseString = GetResponseString(url);
+
+            //Convert string into a json object
+            var results = JsonConvert.DeserializeObject<PlaceDetail>(responseString);
+
+            Debug.WriteLine(results.result.reviews[0].author_name);
+
+            return results.result.reviews;
+        }
+
+        /// <summary>
+        /// This method gets the response string for the APIs.
+        /// </summary>
+        /// <param name="url">The url for the APIs</param>
+        /// <returns>The Json or XML object from the API</returns>
+        private string GetResponseString(string url)
+        {
+            try
+            {
+                //Make a request using my urlInfo, then grab response information 
+                WebRequest request = WebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                Stream information = response.GetResponseStream();
+                StreamReader reader = new StreamReader(information);
+
+                //Grab full response information, read to the end of the data and put it into a string
+                return reader.ReadToEnd();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public ActionResult About()

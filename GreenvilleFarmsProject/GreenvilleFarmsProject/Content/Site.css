@@ -56,6 +56,10 @@ body {
 .bg-brown {
     background-color: #250902;
 }
+
+.border-green {
+    border-color: #2a7221;
+}
 /*end of bootstrap colors*/
 
 /*navbar*/
