@@ -15,7 +15,7 @@ This project is being built for _Greenville Farms_ in _Forest Grove, OR_.
     * _Name it Web_deploy.config_
 6. Run the up.sql script on your Database
 7. Download AppSettingsSecrets.config 
-    * _Put this in the ..\..\..\ folder from the Web.config_
+    * _Put this in the ..\ ..\ ..\ folder from the Web.config_
 8. Update AppSettingsSecrets.config with your _Secrets_
 9. Run Project
 
