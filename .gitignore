@@ -5,7 +5,6 @@
 
 # What I am adding:
 Web_deploy.config
-../Web_deploy.config
 
 # User-specific files
 *.suo
