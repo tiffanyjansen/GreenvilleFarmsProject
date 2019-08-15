@@ -13,27 +13,40 @@ namespace GreenvilleFarmsProject
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            CreateUser();
+            CreateAdminUser();
         }
 
         /// <summary>
-        /// This method creates the User.
+        /// This method creates the Admin User.
         /// </summary>
-        /// <returns>true, if succeeded; false, otherwise</returns>
-        public bool CreateUser()
+        public void CreateAdminUser()
         {
             //Set up variables
             ApplicationDbContext db = new ApplicationDbContext();
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
-            //Get the password and stuff from the external file.
-            string password = System.Web.Configuration.WebConfigurationManager.AppSettings["userPassword"];
-            string email = System.Web.Configuration.WebConfigurationManager.AppSettings["userEmail"];
+            //Check if Admin role already exists
+            if (!roleManager.RoleExists("Admin"))
+            {
+                //Create the Admin Role
+                var role = new IdentityRole { Name = "Admin" };
+                roleManager.Create(role);
 
-            //Create the user.
-            var user = new ApplicationUser { Email = email, UserName = email };
-            var checkUser = UserManager.Create(user, password);
-            return checkUser.Succeeded;
+                //Get the password and stuff from the external file.
+                string password = System.Web.Configuration.WebConfigurationManager.AppSettings["userPassword"];
+                string email = System.Web.Configuration.WebConfigurationManager.AppSettings["userEmail"];
+
+                //Create the user.
+                var user = new ApplicationUser { Email = email, UserName = email };
+                var checkUser = UserManager.Create(user, password);
+
+                //Add default User to Role Admin   
+                if (checkUser.Succeeded)
+                {
+                    UserManager.AddToRole(user.Id, "Admin");
+                }
+            }
         }
     }
 }
