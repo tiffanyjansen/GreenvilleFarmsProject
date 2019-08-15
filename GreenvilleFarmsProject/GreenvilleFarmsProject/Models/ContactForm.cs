@@ -8,16 +8,16 @@ namespace GreenvilleFarmsProject.Models
 {
     public class ContactForm
     {
-        [Required, Display(Name="Your name")]
+        [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
-        
-        [Required, Display(Name="Your email address")]
+
+        [Required(ErrorMessage = "Please enter your email address")]
         [RegularExpression(@"(\w|\.)+\@(\w|\.)+\.(\w|\.)+", ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
-        [Required, Display(Name="Subject")]
+        [Required(ErrorMessage = "Please enter a subject")]
         public string Subject { get; set; }
-        [Required, Display(Name="Message...")]
+        [Required(ErrorMessage = "Please enter your message")]
         public string EmailContents { get; set; }
     }
 }

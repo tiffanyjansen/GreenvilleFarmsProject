@@ -2,13 +2,15 @@
 @{
     ViewBag.Title = "Contact";
 }
-<div class="container-fluid">
-        <h2>
+<div class="card mx-auto m-2 border-green" style="max-width: 50rem">
+    <div class="card-img-top bg-green mh-100;">
+        <h4 class="card-header" style="color:#ffffff;">
             Send us a message
-        </h2>
+        </h4><!--/card-header-->
+    </div>
+    <div class="container-fluid m-3 mx-auto">
         @using (Html.BeginForm())
         {
-            @Html.ValidationSummary()
             @Html.AntiForgeryToken()
             <div class="form-group">
                 <label>
@@ -19,6 +21,7 @@
                     @class = "form-control",
                     placeholder = "Your name..."
                 })
+                @Html.ValidationMessageFor(x => x.Name)
             </div><!--/form-group-->
             <div class="form-group">
                 <label>
@@ -50,15 +53,15 @@
                 {
                     @class = "form-control",
                     placeholder = "Message...",
-                    rows = 3
+                    rows = 5
                 })
                 @Html.ValidationMessageFor(x => x.EmailContents)
             </div><!--/form-group-->
-            <div>
-                <input class="btn btn-green" type="submit" value="Send Email" />
-            </div>
+            <input class="btn btn-green" type="submit" value="Send Email" />
         }
     </div><!--/container-fluid-->
-    @section scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+</div><!--/card-->
+
+@section scripts {
+@Scripts.Render("~/bundles/jqueryval")
+}

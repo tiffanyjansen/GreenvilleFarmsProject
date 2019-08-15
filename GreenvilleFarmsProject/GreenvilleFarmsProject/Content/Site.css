@@ -12,8 +12,8 @@ body {
     color: #ffffff;
 }
     .btn-green:hover {
-        color: #000000;
-        background-color: #f8fff4;
+        color: #ffffff;
+        background-color: #250902;
         border-color: #000000;
     }
 
@@ -21,6 +21,11 @@ body {
     background-color: #7c0a02;
     color: #ffffff;
 }
+    .btn-red:hover {
+        color: #ffffff;
+        background-color: #250902;
+        border-color: #000000;
+    }
 
 .btn-grey {
     background-color: #817f75;
@@ -60,6 +65,10 @@ body {
 .border-green {
     border-color: #2a7221;
 }
+
+.border-grey {
+    border-color: #817f75;
+}
 /*end of bootstrap colors*/
 
 /*navbar*/
@@ -96,9 +105,26 @@ nav {
 }
 /*end of navbar*/
 
+
+.form-control:focus {
+    border-color: #2a7221;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(42,114,33,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(42,114,33,.6);
+}
+
+.field-validation-error {
+    color: #f00000;
+}
+
+.input-validation-error {
+    border: 1px solid #f00000;
+    background-color: #f0e0e0;
+}
+
 .jumbotron
 {
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .placeholder
