@@ -66,6 +66,10 @@ body {
     border-color: #2a7221;
 }
 
+.border-red {
+    border-color: #7c0a02;
+}
+
 .border-grey {
     border-color: #817f75;
 }

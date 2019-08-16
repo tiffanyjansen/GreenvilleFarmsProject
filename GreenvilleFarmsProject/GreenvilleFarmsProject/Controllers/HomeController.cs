@@ -26,6 +26,11 @@ namespace GreenvilleFarmsProject.Controllers
             return View(list);
         }
 
+        /// <summary>
+        /// This function gets the google reviews using the API. 
+        /// </summary>
+        /// <param name="key">Our API key</param>
+        /// <returns>The array of reviews</returns>
         private Review[] getReviews(string key)
         {
             //Build URL for GET request to Google's Place Details API, including key and parameters
@@ -36,8 +41,6 @@ namespace GreenvilleFarmsProject.Controllers
 
             //Convert string into a json object
             var results = JsonConvert.DeserializeObject<PlaceDetail>(responseString);
-
-            Debug.WriteLine(results.result.reviews[0].author_name);
 
             return results.result.reviews;
         }
@@ -51,7 +54,7 @@ namespace GreenvilleFarmsProject.Controllers
         {
             try
             {
-                //Make a request using my urlInfo, then grab response information 
+                //Make a request using url, then grab response information 
                 WebRequest request = WebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 Stream information = response.GetResponseStream();
@@ -68,15 +71,22 @@ namespace GreenvilleFarmsProject.Controllers
 
         public ActionResult About()
         {
+            //Google Map stuff
             string url = "https://maps.googleapis.com/maps/api/js?key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
             url += "&callback=initMap";
             ViewBag.googleAPI = url;
+
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            //Google Map stuff
+            string url = "https://maps.googleapis.com/maps/api/js?key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
+            url += "&callback=initMap";
+            ViewBag.googleAPI = url;
 
             return View();
         }
