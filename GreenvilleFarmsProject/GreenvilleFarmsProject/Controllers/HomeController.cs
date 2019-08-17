@@ -69,16 +69,6 @@ namespace GreenvilleFarmsProject.Controllers
             }
         }
 
-        public ActionResult About()
-        {
-            //Google Map stuff
-            string url = "https://maps.googleapis.com/maps/api/js?key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
-            url += "&callback=initMap";
-            ViewBag.googleAPI = url;
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
