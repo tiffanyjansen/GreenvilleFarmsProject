@@ -182,3 +182,11 @@ nav {
 .filter-gold {
     filter: invert(88%) sepia(25%) saturate(5633%) hue-rotate(1deg) brightness(106%) contrast(106%);
 }
+
+.vh {
+    height: 85vh;
+}
+
+.min-vh {
+    min-height: 85vh;
+}
