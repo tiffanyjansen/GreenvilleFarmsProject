@@ -6,14 +6,14 @@
 <a class="active"></a>
 
 <!--Banner and Title-->
-<div class="image-bar" ">
+<div class="image-bar">
     <h1>Greenville Farms</h1>
 </div>
 
 <div class="container-fluid">
     <!-- Row 1 -->
     <div class="row">
-        <div class="col-md-3 col-xs-12">
+        <div class="col-xl-3 order-xl-first col-md-6 col-xs-12">
             <br />
             <!-- About Us -->
             <div class="card border-red">
@@ -29,14 +29,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-xs-12">
+        <div class="col-xl-6 col-md-12 order-md-first col-xs-12">
             <br />
             <!-- Tractor Pic (w/Dog) -->
             <div class="d-flex justify-content-center">
                 <div id="tractorImage"></div>
             </div>
         </div>
-        <div class="col-md-3 col-xs-12">
+        <div class="col-xl-3 col-md-6 col-xs-12">
             <br />
             <!--Google Reviews-->
             <div class="card border-green">
@@ -46,12 +46,33 @@
                 <div class="card-body border-green">
                     @foreach (var review in Model)
                     {
-                        <p><strong>@Html.DisplayNameFor(model => model.author_name): </strong>@Html.DisplayFor(modelItem => review.author_name)</p>
-                        <p><strong>@Html.DisplayNameFor(model => model.rating): </strong>@Html.DisplayFor(modelItem => review.rating)</p>
-                        <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
-                        <p>@Html.DisplayFor(modelItem => review.text)</p>
-                    }
-                </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <p><strong>@Html.DisplayNameFor(model => model.author_name): </strong>@Html.DisplayFor(modelItem => review.author_name)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                            <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                            <!--<div class="d-flex justify-content-end">-->
+                            <p>
+                                @for (int i = 0; i < review.rating; i++)
+                                {
+                                    <img src="~/Content/Images/Icons/star.svg" class="filter-gold" />
+                                }
+                            </p>
+                        <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <p>@Html.DisplayFor(modelItem => review.text)</p>
+                        </div>
+                    </div>
+                        }
+                    </div>
             </div>
         </div>
     </div>

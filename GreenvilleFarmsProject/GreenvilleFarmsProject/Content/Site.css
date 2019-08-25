@@ -178,3 +178,7 @@ nav {
     background-repeat: no-repeat;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.filter-gold {
+    filter: invert(88%) sepia(25%) saturate(5633%) hue-rotate(1deg) brightness(106%) contrast(106%);
+}
