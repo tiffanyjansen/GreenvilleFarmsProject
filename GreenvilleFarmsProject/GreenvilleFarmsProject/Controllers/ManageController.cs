@@ -54,6 +54,16 @@ namespace GreenvilleFarmsProject.Controllers
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
+            //Check if user is an admin
+            if (new AdminHelperController().IsAdminUser(User.Identity))
+            {
+                ViewBag.Admin = 1;
+            }
+            else
+            {
+                ViewBag.Admin = 0;
+            }
+
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
@@ -72,6 +82,7 @@ namespace GreenvilleFarmsProject.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
             return View(model);
         }
 

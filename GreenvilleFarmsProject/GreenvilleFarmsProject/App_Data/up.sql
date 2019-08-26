@@ -1,4 +1,13 @@
-﻿/*ASP Tables for the Users */
+﻿/* Picures Table for the Home Page carousel */
+CREATE TABLE [dbo].[Pictures] (
+	[PictureId]			INT IDENTITY(1,1)	NOT NULL,
+	[PictureName]		NVARCHAR(MAX)		NOT NULL,
+	[Deleted]			BIT	DEFAULT '0'		NOT NULL,
+
+	CONSTRAINT [PK_dbo.Pictures] PRIMARY KEY CLUSTERED ([PictureID] ASC)
+);
+
+/*ASP Tables for the Users */
 /* AspNetUsers Table */
 CREATE TABLE [dbo].[AspNetUsers] (
     [Id]                   NVARCHAR (128) NOT NULL,

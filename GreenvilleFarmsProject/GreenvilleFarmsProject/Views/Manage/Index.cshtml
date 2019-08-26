@@ -3,39 +3,65 @@
     ViewBag.Title = "Manage";
 }
 
-<br />
 <div class="container-fluid">
    <div class="row">
-        <div class="col-md-6">
-            <div class="d-flex justify-content-start">
-                <h2>My Profile</h2>
-            </div>
-
-        </div>
-        <div class="col-md-6">
-            <p class="text-success">@ViewBag.StatusMessage</p>
-            <div class="card border-green">
-                <div class="card-header bg-green" style="color:#ffffff;">
-                    <h3>Change your account settings</h3>
-                </div>
-                <div class="card-body border-green">
-                    <div class="d-flex justify-content-start">
-                        <p style="font-size: 18px;">
-                            <strong>
-                                Password:
-                            </strong>
-                            @if (Model.HasPassword)
-                            {
-                                @Html.ActionLink("Change your password", "ChangePassword")
-                            }
-                            else
-                            {
-                                @Html.ActionLink("Create", "SetPassword")
-                            }
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div class="col-md-12 col-xs-12">
+           <div class="d-flex justify-content-center m-3" id="profile">
+               <h2 class="h1">My Profile</h2>
+               <p class="text-success">@ViewBag.StatusMessage</p>
+           </div>
+       </div>
+   </div>
+    <div class="row">
+       <div class="col-md-6">           
+           <div class="card border-green">
+               <div class="card-header bg-green" style="color:#ffffff;">
+                   <h3>Change your account settings</h3>
+               </div>
+               <div class="card-body border-green">
+                   <div class="d-flex justify-content-start">
+                       <p style="font-size: 18px;">
+                           <strong>
+                               Password:
+                           </strong>
+                           @if (Model.HasPassword)
+                           {
+                               @Html.ActionLink("Change your password", "ChangePassword")
+                           }
+                           else
+                           {
+                               @Html.ActionLink("Create", "SetPassword")
+                           }
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="col-md-6">
+           @if (ViewBag.Admin == 1)
+           {
+               <div class="card border-red">
+                   <div class="card-header bg-red" style="color:#ffffff;">
+                       <h3>Admin Links</h3>
+                   </div>
+                   <div class="card-body border-red">
+                       <strong>@Html.ActionLink("ADD PICTURE TO HOME PAGE", "AddPicture", "Admin")</strong><br />
+                       <strong>@Html.ActionLink("ADD/REMOVE FARMER'S MARKETS", "EditMarket", "Admin")</strong>
+                   </div>
+               </div>
+           }
+           else
+           {
+               <div class="card border-red">
+                   <div class="card-header bg-red" style="color:#ffffff;">
+                       <h3>Leave a review</h3>
+                   </div>
+                   <div class="card-body border-red">
+                       <!--Some review stuff-->
+                       @*<strong>@Html.ActionLink("ADD PICTURE TO HOME PAGE", "AddPicture", "Admin")</strong>*@
+                   </div>
+               </div>
+           }
+       </div>
     </div>
 </div>
