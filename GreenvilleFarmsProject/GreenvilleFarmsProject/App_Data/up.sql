@@ -2,7 +2,6 @@
 CREATE TABLE [dbo].[Pictures] (
 	[PictureId]			INT IDENTITY(1,1)	NOT NULL,
 	[PictureName]		NVARCHAR(MAX)		NOT NULL,
-	[Deleted]			BIT	DEFAULT '0'		NOT NULL,
 
 	CONSTRAINT [PK_dbo.Pictures] PRIMARY KEY CLUSTERED ([PictureID] ASC)
 );
