@@ -32,16 +32,23 @@
         <div class="col-xl-6 col-md-12 order-md-first col-xs-12">
             <br />
             <!-- Carousel -->
-            <!--<div class="d-flex justify-content-center">
-                <div id="tractorImage"></div>
-            </div>-->
-            <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" style="background-color:#fffbfe;">
-                        <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Tractor_Dog.jpg" />
-                    </div>
-                    <div class="carousel-item" style="background-color:#fffbfe;">
-                        <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Tractor.jpg" />
+            @if (ViewBag.Pictures.Length == 1)
+            {
+                <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
+            }
+            @if (ViewBag.Pictures.Length > 1)
+            {
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="background-color:#fffbfe;">
+                            <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
+                        </div>
+                        @for (int i = 1; i < ViewBag.Pictures.Length; i++)
+                        {
+                            <div class="carousel-item" style="background-color:#fffbfe;">
+                                <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[i].PictureName" />
+                            </div>
+                        }
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -52,7 +59,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
+            }
         </div>
         <div class="col-xl-3 col-md-6 col-xs-12">
             <br />

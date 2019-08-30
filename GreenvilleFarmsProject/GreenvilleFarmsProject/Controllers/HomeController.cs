@@ -18,8 +18,13 @@ namespace GreenvilleFarmsProject.Controllers
 {
     public class HomeController : Controller
     {
+        DatabaseContext db = new DatabaseContext();
+
         public ActionResult Index()
         {
+            Picture[] pictures = db.Pictures.ToArray();
+            ViewBag.Pictures = pictures;
+
             string key = System.Web.Configuration.WebConfigurationManager.AppSettings["googleAPIkey"];
             Review[] reviews = getReviews(key);
             IEnumerable<Review> list = new List<Review>(reviews);
