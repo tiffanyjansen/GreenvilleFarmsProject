@@ -26,6 +26,11 @@
         </div>
         <div class="col-xl-6 col-lg-10 order-sm-first col-xs-12">
             <br />
+            @if (ViewBag.Pictures.Length < 1)
+            {
+                <!-- Just use the barn picture for now. (Maybe if we get a logo pic we can use that instead?)-->
+                <img class="d-block picture" src="~/Content/Images/Barn.jpg" />
+            }
             @if (ViewBag.Pictures.Length == 1)
             {
                 <!-- The one picture (if there is only 1) -->
