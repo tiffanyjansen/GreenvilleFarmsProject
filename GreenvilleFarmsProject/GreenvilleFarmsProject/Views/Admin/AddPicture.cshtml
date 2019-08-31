@@ -10,7 +10,17 @@
                 <h2 class="h1">Home Page Pictures</h2>
             </div>            
             <div class="d-flex justify-content-center m-3" id="profile">
-                <h3 style="color:#2a7221;">@ViewBag.Message</h3>
+                @if (ViewBag.Success != null)
+                {
+                    if (ViewBag.Success)
+                    {
+                        <h3 style="color:#2a7221;"><strong>@ViewBag.Message</strong></h3>
+                    }
+                    else
+                    {
+                        <h3 style="color:#7c0a02;"><strong>@ViewBag.Message</strong></h3>
+                    }
+                }
             </div>            
         </div>
     </div>
@@ -46,7 +56,7 @@
                     {
                         if (Model.Count() == 1)
                         {
-                            <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@Model.First().PictureName" /><br />
+                            <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@Model.First().PictureName" /><br />
                             <div class="text-center">
                                 @Html.ActionLink("Delete", "RemovePicture", "Admin", new { id = Model.First().PictureId }, new { @class = "btn btn-red" })
                             </div>
@@ -57,7 +67,7 @@
                                 <div class="carousel-inner">
 
                                     <div class="carousel-item active" style="background-color:#fffbfe;">
-                                        <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@Model.First().PictureName" /><br />
+                                        <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@Model.First().PictureName" /><br />
                                         <div class="text-center">
                                             @Html.ActionLink("Delete", "RemovePicture", "Admin", new { id = Model.First().PictureId }, new { @class = "btn btn-red" })
                                         </div>
@@ -65,7 +75,7 @@
                                     @for (int i = 1; i < Model.Count(); i++)
                                     {
                                         <div class="carousel-item" style="background-color:#fffbfe;">
-                                            <img class="d-block w-100 vh" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@Model.Skip(i).First().PictureName" /><br />
+                                            <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@Model.Skip(i).First().PictureName" /><br />
                                             <div class="text-center">
                                                 @Html.ActionLink("Delete", "RemovePicture", "Admin", new { id = Model.Skip(i).First().PictureId }, new { @class = "btn btn-red" })
                                             </div>
@@ -85,7 +95,7 @@
                     }
                     else
                     {
-                        <h4>There are no pictures on the home page yet. Please Upload one now.</h4>
+                        <h4>There are currently no uploaded pictures. Please upload one now.</h4>
                     }
                 </div>
             </div>

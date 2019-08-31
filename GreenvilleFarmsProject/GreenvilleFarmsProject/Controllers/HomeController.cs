@@ -18,7 +18,7 @@ namespace GreenvilleFarmsProject.Controllers
 {
     public class HomeController : Controller
     {
-        DatabaseContext db = new DatabaseContext();
+        private DatabaseContext db = new DatabaseContext();
 
         public ActionResult Index()
         {

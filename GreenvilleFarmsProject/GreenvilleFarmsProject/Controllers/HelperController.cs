@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace GreenvilleFarmsProject.Controllers
 {
-    public class AdminHelperController : Controller
+    public class HelperController : Controller
     {
         /// <summary>
         /// Checks if logged in user is an admin.

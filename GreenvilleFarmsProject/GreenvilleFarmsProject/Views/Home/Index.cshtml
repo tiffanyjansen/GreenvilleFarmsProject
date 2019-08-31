@@ -29,7 +29,7 @@
             @if (ViewBag.Pictures.Length == 1)
             {
                 <!-- The one picture (if there is only 1) -->
-                <img class="d-block picture" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
+                <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
             }
             @if (ViewBag.Pictures.Length > 1)
             {
@@ -37,12 +37,12 @@
                 <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="background-color:#fffbfe;">
-                            <img class="d-block picture" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
+                            <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
                         </div>
                         @for (int i = 1; i < ViewBag.Pictures.Length; i++)
                         {
                             <div class="carousel-item" style="background-color:#fffbfe;">
-                                <img class="d-block picture" style="object-fit:cover;" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[i].PictureName" />
+                                <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[i].PictureName" />
                             </div>
                         }
                     </div>

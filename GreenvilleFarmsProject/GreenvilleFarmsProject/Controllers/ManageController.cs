@@ -15,6 +15,7 @@ namespace GreenvilleFarmsProject.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private HelperController helper = new HelperController();
 
         public ManageController()
         {
@@ -53,9 +54,8 @@ namespace GreenvilleFarmsProject.Controllers
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
-        {
-            //Check if user is an admin
-            if (new AdminHelperController().IsAdminUser(User.Identity))
+        {     
+            if (helper.IsAdminUser(User.Identity)) //Check if user is an admin
             {
                 ViewBag.Admin = 1;
             }
@@ -339,6 +339,12 @@ namespace GreenvilleFarmsProject.Controllers
             {
                 _userManager.Dispose();
                 _userManager = null;
+            }
+
+            if(disposing && helper != null)
+            {
+                helper.Dispose();
+                helper = null;
             }
 
             base.Dispose(disposing);
