@@ -1,6 +1,6 @@
 ﻿/* ~The Styling for the Site~ */
 body {
-    font-size: 16px;
+    /*font-size: 16px;*/
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
@@ -64,6 +64,10 @@ body {
 
 .border-green {
     border-color: #2a7221;
+}
+
+.border-red {
+    border-color: #7c0a02;
 }
 
 .border-grey {
@@ -157,18 +161,87 @@ nav {
     }
 
 #map {
-    width: 600px;
-    height: 450px;
+    width: 100%;
+    height: 565px;
+    border: 1px solid #2a7221;
+    border-radius: 5px;
 }
 
-#tractorImage {
-    background-image: url(Images/Tractor_Dog.jpg);
-    background-position: 65% 30%;
-    background-color: #2b2118;
-    width: 600px;
-    height: 450px;
-    border: none;
-    padding: 0;
-    background-repeat: no-repeat;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.filter-gold {
+    filter: invert(88%) sepia(25%) saturate(5633%) hue-rotate(1deg) brightness(106%) contrast(106%);
+}
+
+@media only screen and (min-width: 1200px) {
+    /* xl sized screens */
+    .picture {
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 550px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* lg sized screens */
+    .picture {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 450px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* md sized screens */
+    .picture {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 600px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    /* sm sized screens */
+    .picture {
+        width: 100%;
+        height: 525px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 510px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    /* xs sized screens */
+    .picture {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        
+    }
+}
+
+/*h2 {
+    font-family: 'Berkshire Swash', cursive;
+}*/
+
+#profile {
+    font-family: 'Berkshire Swash', cursive;
+
+}
+
+.card-header {
+    font-family: 'Averia Libre', cursive;
 }

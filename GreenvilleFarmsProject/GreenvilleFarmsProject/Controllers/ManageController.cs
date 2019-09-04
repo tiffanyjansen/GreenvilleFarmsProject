@@ -15,6 +15,7 @@ namespace GreenvilleFarmsProject.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private HelperController helper = new HelperController();
 
         public ManageController()
         {
@@ -53,7 +54,16 @@ namespace GreenvilleFarmsProject.Controllers
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
-        {
+        {     
+            if (helper.IsAdminUser(User.Identity)) //Check if user is an admin
+            {
+                ViewBag.Admin = 1;
+            }
+            else
+            {
+                ViewBag.Admin = 0;
+            }
+
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
@@ -72,6 +82,7 @@ namespace GreenvilleFarmsProject.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
             return View(model);
         }
 
@@ -328,6 +339,12 @@ namespace GreenvilleFarmsProject.Controllers
             {
                 _userManager.Dispose();
                 _userManager = null;
+            }
+
+            if(disposing && helper != null)
+            {
+                helper.Dispose();
+                helper = null;
             }
 
             base.Dispose(disposing);
