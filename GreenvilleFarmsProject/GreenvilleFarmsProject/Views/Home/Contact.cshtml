@@ -1,17 +1,82 @@
-﻿@{
+﻿@model GreenvilleFarmsProject.Models.ContactForm
+@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5 col-xs-12 m-2">
+                <div class="d-flex justify-content-end">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-12">
+                <div class="card mx-auto m-2 border-green" style="max-width: 50rem">
+                    <div class="card-img-top bg-green mh-100;">
+                        <h4 class="card-header" style="color:#ffffff;">
+                            Send us a message
+                        </h4><!--/card-header-->
+                    </div>
+                    <div class="container-fluid m-3 mx-auto">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label>
+                                    Name:
+                                </label>
+                                @Html.TextBoxFor(x => x.Name, new
+                                {
+                                    @class = "form-control",
+                                    placeholder = "Your name..."
+                                })
+                                @Html.ValidationMessageFor(x => x.Name)
+                            </div><!--/form-group-->
+                            <div class="form-group">
+                                <label>
+                                    Email:
+                                </label>
+                                @Html.TextBoxFor(x => x.Email, new
+                                {
+                                    @class = "form-control",
+                                    placeholder = "Your email address..."
+                                })
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div><!--/form-group-->
+                            <div class="form-group">
+                                <label>
+                                    Subject:
+                                </label>
+                                @Html.TextBoxFor(x => x.Subject, new
+                                {
+                                    @class = "form-control",
+                                    placeholder = "Subject...",
+                                })
+                                @Html.ValidationMessageFor(x => x.Subject)
+                            </div><!--/form-group-->
+                            <div class="form-group">
+                                <label>
+                                    Message:
+                                </label>
+                                @Html.TextAreaFor(x => x.EmailContents, new
+                                {
+                                    @class = "form-control",
+                                    placeholder = "Message...",
+                                    rows = 5
+                                })
+                                @Html.ValidationMessageFor(x => x.EmailContents)
+                            </div><!--/form-group-->
+                            <input class="btn btn-green" type="submit" value="Send Email" />
+                        }
+                    </div><!--/container-fluid-->
+                </div><!--/card-->
+            </div>
+        </div>
+    </div>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<!--Google Map API Scripts-->
+<script src="~/Scripts/map.js"></script>
+<script src="@ViewBag.googleAPI" async defer></script>

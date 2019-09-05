@@ -84,6 +84,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,24 +175,235 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Picture.cs" />
+    <Compile Include="Models\PlaceDetail.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\down.sql" />
+    <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\American-Barn.svg" />
+    <Content Include="Content\Images\Barn.jpg" />
+    <Content Include="Content\Images\barn.svg" />
+    <Content Include="Content\Images\Barn_Internet.jpg" />
+    <Content Include="Content\Images\Icons\alert.svg" />
+    <Content Include="Content\Images\Icons\archive.svg" />
+    <Content Include="Content\Images\Icons\arrow-both.svg" />
+    <Content Include="Content\Images\Icons\arrow-down.svg" />
+    <Content Include="Content\Images\Icons\arrow-left.svg" />
+    <Content Include="Content\Images\Icons\arrow-right.svg" />
+    <Content Include="Content\Images\Icons\arrow-small-down.svg" />
+    <Content Include="Content\Images\Icons\arrow-small-left.svg" />
+    <Content Include="Content\Images\Icons\arrow-small-right.svg" />
+    <Content Include="Content\Images\Icons\arrow-small-up.svg" />
+    <Content Include="Content\Images\Icons\arrow-up.svg" />
+    <Content Include="Content\Images\Icons\beaker.svg" />
+    <Content Include="Content\Images\Icons\bell.svg" />
+    <Content Include="Content\Images\Icons\bold.svg" />
+    <Content Include="Content\Images\Icons\book.svg" />
+    <Content Include="Content\Images\Icons\bookmark.svg" />
+    <Content Include="Content\Images\Icons\briefcase.svg" />
+    <Content Include="Content\Images\Icons\broadcast.svg" />
+    <Content Include="Content\Images\Icons\browser.svg" />
+    <Content Include="Content\Images\Icons\bug.svg" />
+    <Content Include="Content\Images\Icons\calendar.svg" />
+    <Content Include="Content\Images\Icons\check.svg" />
+    <Content Include="Content\Images\Icons\checklist.svg" />
+    <Content Include="Content\Images\Icons\chevron-down.svg" />
+    <Content Include="Content\Images\Icons\chevron-left.svg" />
+    <Content Include="Content\Images\Icons\chevron-right.svg" />
+    <Content Include="Content\Images\Icons\chevron-up.svg" />
+    <Content Include="Content\Images\Icons\circle-slash.svg" />
+    <Content Include="Content\Images\Icons\circuit-board.svg" />
+    <Content Include="Content\Images\Icons\clippy.svg" />
+    <Content Include="Content\Images\Icons\clock.svg" />
+    <Content Include="Content\Images\Icons\cloud-download.svg" />
+    <Content Include="Content\Images\Icons\cloud-upload.svg" />
+    <Content Include="Content\Images\Icons\code.svg" />
+    <Content Include="Content\Images\Icons\comment-discussion.svg" />
+    <Content Include="Content\Images\Icons\comment.svg" />
+    <Content Include="Content\Images\Icons\credit-card.svg" />
+    <Content Include="Content\Images\Icons\dash.svg" />
+    <Content Include="Content\Images\Icons\dashboard.svg" />
+    <Content Include="Content\Images\Icons\database.svg" />
+    <Content Include="Content\Images\Icons\dependent.svg" />
+    <Content Include="Content\Images\Icons\desktop-download.svg" />
+    <Content Include="Content\Images\Icons\device-camera-video.svg" />
+    <Content Include="Content\Images\Icons\device-camera.svg" />
+    <Content Include="Content\Images\Icons\device-desktop.svg" />
+    <Content Include="Content\Images\Icons\device-mobile.svg" />
+    <Content Include="Content\Images\Icons\diff-added.svg" />
+    <Content Include="Content\Images\Icons\diff-ignored.svg" />
+    <Content Include="Content\Images\Icons\diff-modified.svg" />
+    <Content Include="Content\Images\Icons\diff-removed.svg" />
+    <Content Include="Content\Images\Icons\diff-renamed.svg" />
+    <Content Include="Content\Images\Icons\diff.svg" />
+    <Content Include="Content\Images\Icons\ellipsis.svg" />
+    <Content Include="Content\Images\Icons\eye-closed.svg" />
+    <Content Include="Content\Images\Icons\eye.svg" />
+    <Content Include="Content\Images\Icons\file-binary.svg" />
+    <Content Include="Content\Images\Icons\file-code.svg" />
+    <Content Include="Content\Images\Icons\file-directory.svg" />
+    <Content Include="Content\Images\Icons\file-media.svg" />
+    <Content Include="Content\Images\Icons\file-pdf.svg" />
+    <Content Include="Content\Images\Icons\file-submodule.svg" />
+    <Content Include="Content\Images\Icons\file-symlink-directory.svg" />
+    <Content Include="Content\Images\Icons\file-symlink-file.svg" />
+    <Content Include="Content\Images\Icons\file-zip.svg" />
+    <Content Include="Content\Images\Icons\file.svg" />
+    <Content Include="Content\Images\Icons\flame.svg" />
+    <Content Include="Content\Images\Icons\fold-down.svg" />
+    <Content Include="Content\Images\Icons\fold-up.svg" />
+    <Content Include="Content\Images\Icons\fold.svg" />
+    <Content Include="Content\Images\Icons\gear.svg" />
+    <Content Include="Content\Images\Icons\gift.svg" />
+    <Content Include="Content\Images\Icons\gist-secret.svg" />
+    <Content Include="Content\Images\Icons\gist.svg" />
+    <Content Include="Content\Images\Icons\git-branch.svg" />
+    <Content Include="Content\Images\Icons\git-commit.svg" />
+    <Content Include="Content\Images\Icons\git-compare.svg" />
+    <Content Include="Content\Images\Icons\git-merge.svg" />
+    <Content Include="Content\Images\Icons\git-pull-request.svg" />
+    <Content Include="Content\Images\Icons\github-action.svg" />
+    <Content Include="Content\Images\Icons\globe.svg" />
+    <Content Include="Content\Images\Icons\grabber.svg" />
+    <Content Include="Content\Images\Icons\graph.svg" />
+    <Content Include="Content\Images\Icons\heart.svg" />
+    <Content Include="Content\Images\Icons\history.svg" />
+    <Content Include="Content\Images\Icons\home.svg" />
+    <Content Include="Content\Images\Icons\horizontal-rule.svg" />
+    <Content Include="Content\Images\Icons\hubot.svg" />
+    <Content Include="Content\Images\Icons\inbox.svg" />
+    <Content Include="Content\Images\Icons\info.svg" />
+    <Content Include="Content\Images\Icons\issue-closed.svg" />
+    <Content Include="Content\Images\Icons\issue-opened.svg" />
+    <Content Include="Content\Images\Icons\issue-reopened.svg" />
+    <Content Include="Content\Images\Icons\italic.svg" />
+    <Content Include="Content\Images\Icons\jersey.svg" />
+    <Content Include="Content\Images\Icons\kebab-horizontal.svg" />
+    <Content Include="Content\Images\Icons\kebab-vertical.svg" />
+    <Content Include="Content\Images\Icons\key.svg" />
+    <Content Include="Content\Images\Icons\keyboard.svg" />
+    <Content Include="Content\Images\Icons\law.svg" />
+    <Content Include="Content\Images\Icons\light-bulb.svg" />
+    <Content Include="Content\Images\Icons\link-external.svg" />
+    <Content Include="Content\Images\Icons\link.svg" />
+    <Content Include="Content\Images\Icons\list-ordered.svg" />
+    <Content Include="Content\Images\Icons\list-unordered.svg" />
+    <Content Include="Content\Images\Icons\location.svg" />
+    <Content Include="Content\Images\Icons\lock.svg" />
+    <Content Include="Content\Images\Icons\logo-gist.svg" />
+    <Content Include="Content\Images\Icons\logo-github.svg" />
+    <Content Include="Content\Images\Icons\mail-read.svg" />
+    <Content Include="Content\Images\Icons\mail.svg" />
+    <Content Include="Content\Images\Icons\mark-github.svg" />
+    <Content Include="Content\Images\Icons\markdown.svg" />
+    <Content Include="Content\Images\Icons\megaphone.svg" />
+    <Content Include="Content\Images\Icons\mention.svg" />
+    <Content Include="Content\Images\Icons\milestone.svg" />
+    <Content Include="Content\Images\Icons\mirror.svg" />
+    <Content Include="Content\Images\Icons\mortar-board.svg" />
+    <Content Include="Content\Images\Icons\mute.svg" />
+    <Content Include="Content\Images\Icons\no-newline.svg" />
+    <Content Include="Content\Images\Icons\note.svg" />
+    <Content Include="Content\Images\Icons\octoface.svg" />
+    <Content Include="Content\Images\Icons\organization.svg" />
+    <Content Include="Content\Images\Icons\package.svg" />
+    <Content Include="Content\Images\Icons\paintcan.svg" />
+    <Content Include="Content\Images\Icons\pencil.svg" />
+    <Content Include="Content\Images\Icons\person.svg" />
+    <Content Include="Content\Images\Icons\pin.svg" />
+    <Content Include="Content\Images\Icons\play.svg" />
+    <Content Include="Content\Images\Icons\plug.svg" />
+    <Content Include="Content\Images\Icons\plus-small.svg" />
+    <Content Include="Content\Images\Icons\plus.svg" />
+    <Content Include="Content\Images\Icons\primitive-dot.svg" />
+    <Content Include="Content\Images\Icons\primitive-square.svg" />
+    <Content Include="Content\Images\Icons\project.svg" />
+    <Content Include="Content\Images\Icons\pulse.svg" />
+    <Content Include="Content\Images\Icons\question.svg" />
+    <Content Include="Content\Images\Icons\quote.svg" />
+    <Content Include="Content\Images\Icons\radio-tower.svg" />
+    <Content Include="Content\Images\Icons\reply.svg" />
+    <Content Include="Content\Images\Icons\repo-clone.svg" />
+    <Content Include="Content\Images\Icons\repo-force-push.svg" />
+    <Content Include="Content\Images\Icons\repo-forked.svg" />
+    <Content Include="Content\Images\Icons\repo-pull.svg" />
+    <Content Include="Content\Images\Icons\repo-push.svg" />
+    <Content Include="Content\Images\Icons\repo-template-private.svg" />
+    <Content Include="Content\Images\Icons\repo-template.svg" />
+    <Content Include="Content\Images\Icons\repo.svg" />
+    <Content Include="Content\Images\Icons\report.svg" />
+    <Content Include="Content\Images\Icons\request-changes.svg" />
+    <Content Include="Content\Images\Icons\rocket.svg" />
+    <Content Include="Content\Images\Icons\rss.svg" />
+    <Content Include="Content\Images\Icons\ruby.svg" />
+    <Content Include="Content\Images\Icons\screen-full.svg" />
+    <Content Include="Content\Images\Icons\screen-normal.svg" />
+    <Content Include="Content\Images\Icons\search.svg" />
+    <Content Include="Content\Images\Icons\server.svg" />
+    <Content Include="Content\Images\Icons\settings.svg" />
+    <Content Include="Content\Images\Icons\shield-check.svg" />
+    <Content Include="Content\Images\Icons\shield-lock.svg" />
+    <Content Include="Content\Images\Icons\shield-x.svg" />
+    <Content Include="Content\Images\Icons\shield.svg" />
+    <Content Include="Content\Images\Icons\sign-in.svg" />
+    <Content Include="Content\Images\Icons\sign-out.svg" />
+    <Content Include="Content\Images\Icons\skip.svg" />
+    <Content Include="Content\Images\Icons\smiley.svg" />
+    <Content Include="Content\Images\Icons\squirrel.svg" />
+    <Content Include="Content\Images\Icons\star.svg" />
+    <Content Include="Content\Images\Icons\stop.svg" />
+    <Content Include="Content\Images\Icons\sync.svg" />
+    <Content Include="Content\Images\Icons\tag.svg" />
+    <Content Include="Content\Images\Icons\tasklist.svg" />
+    <Content Include="Content\Images\Icons\telescope.svg" />
+    <Content Include="Content\Images\Icons\terminal.svg" />
+    <Content Include="Content\Images\Icons\text-size.svg" />
+    <Content Include="Content\Images\Icons\three-bars.svg" />
+    <Content Include="Content\Images\Icons\thumbsdown.svg" />
+    <Content Include="Content\Images\Icons\thumbsup.svg" />
+    <Content Include="Content\Images\Icons\tools.svg" />
+    <Content Include="Content\Images\Icons\trashcan.svg" />
+    <Content Include="Content\Images\Icons\triangle-down.svg" />
+    <Content Include="Content\Images\Icons\triangle-left.svg" />
+    <Content Include="Content\Images\Icons\triangle-right.svg" />
+    <Content Include="Content\Images\Icons\triangle-up.svg" />
+    <Content Include="Content\Images\Icons\unfold.svg" />
+    <Content Include="Content\Images\Icons\unmute.svg" />
+    <Content Include="Content\Images\Icons\unverified.svg" />
+    <Content Include="Content\Images\Icons\verified.svg" />
+    <Content Include="Content\Images\Icons\versions.svg" />
+    <Content Include="Content\Images\Icons\watch.svg" />
+    <Content Include="Content\Images\Icons\x.svg" />
+    <Content Include="Content\Images\Icons\zap.svg" />
+    <Content Include="Content\Images\Tractor.jpg" />
+    <Content Include="Content\Images\tractor.svg" />
+    <Content Include="Content\Images\Tractor_Dog.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -228,7 +441,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\map.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\navbar.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -248,7 +463,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -270,7 +484,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -280,9 +493,15 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Web_deploy.config" />
+    <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admin\AddPicture.cshtml" />
+    <Content Include="Views\Admin\RemovePicture.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Picture_Uploads\" />
+    <Folder Include="Views\AdminHelper\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -334,4 +553,18 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+  </Target>
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+</Target>
 </Project>

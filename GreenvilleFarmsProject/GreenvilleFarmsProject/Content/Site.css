@@ -1,24 +1,247 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/* ~The Styling for the Site~ */
+body {
+    /*font-size: 16px;*/
+    background-color: #fffbfe;
+    color: #000000;
+    margin: 0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+/*new bootstrap colors*/
+.btn-green{
+    background-color: #2a7221;
+    color: #ffffff;
+}
+    .btn-green:hover {
+        color: #ffffff;
+        background-color: #250902;
+        border-color: #000000;
+    }
+
+.btn-red {
+    background-color: #7c0a02;
+    color: #ffffff;
+}
+    .btn-red:hover {
+        color: #ffffff;
+        background-color: #250902;
+        border-color: #000000;
+    }
+
+.btn-grey {
+    background-color: #817f75;
+    color: #000000;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.btn-cream {
+    background-color: #f8fff4;
+    color: #000000;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.btn-brown {
+    background-color: #250902;
+    color: #ffffff;
+}
+
+.bg-green {
+    background-color: #2a7221;
+}
+
+.bg-red {
+    background-color: #7c0a02;
+}
+
+.bg-grey {
+    background-color: #817f75;
+}
+
+.bg-cream {
+    background-color: #f8fff4;
+}
+
+.bg-brown {
+    background-color: #250902;
+}
+
+.border-green {
+    border-color: #2a7221;
+}
+
+.border-red {
+    border-color: #7c0a02;
+}
+
+.border-grey {
+    border-color: #817f75;
+}
+/*end of bootstrap colors*/
+
+/*navbar*/
+.navbar {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.nav-item {
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #ffffff;
+    width: 150px;
+}
+
+nav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-nav a:hover {
+    background-color: #f8fff4;
+    color: #000000;
+}
+
+.active {
+    background-color: #2a7221;
+}
+
+.border-success {
+    border-color: #2a7221 !important;
+}
+/*end of navbar*/
+
+
+.form-control:focus {
+    border-color: #2a7221;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(42,114,33,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(42,114,33,.6);
+}
+
+.field-validation-error {
+    color: #f00000;
+}
+
+.input-validation-error {
+    border: 1px solid #f00000;
+    background-color: #f0e0e0;
+}
+
+.jumbotron
+{
+    margin: 20px;
+}
+
+.placeholder
+{
+    padding:10px;
+}
+
+.container {
+    padding: 10px;
+    margin: 10px;
+}
+
+/*The image on the home page*/
+.image-bar {
+    background-image: url(Images/Barn.jpg);
+    background-position: 50% 27%;
+    background-color: #000000;
+    max-width: 100%;
+    height: 240px;
+    border: none;
+    padding: 0;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .image-bar h1 {
+        text-align: center;
+        padding-top: 75px;
+        color: #ffffff;
+    }
+
+#map {
+    width: 100%;
+    height: 565px;
+    border: 1px solid #2a7221;
+    border-radius: 5px;
+}
+
+.filter-gold {
+    filter: invert(88%) sepia(25%) saturate(5633%) hue-rotate(1deg) brightness(106%) contrast(106%);
+}
+
+@media only screen and (min-width: 1200px) {
+    /* xl sized screens */
+    .picture {
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 550px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* lg sized screens */
+    .picture {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 450px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* md sized screens */
+    .picture {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 600px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    /* sm sized screens */
+    .picture {
+        width: 100%;
+        height: 525px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        min-height: 510px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    /* xs sized screens */
+    .picture {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .info-box {
+        
+    }
+}
+
+/*h2 {
+    font-family: 'Berkshire Swash', cursive;
+}*/
+
+#profile {
+    font-family: 'Berkshire Swash', cursive;
+
+}
+
+.card-header {
+    font-family: 'Averia Libre', cursive;
 }
