@@ -13,14 +13,26 @@
             <!-- About Us -->
             <div class="card border-red info-box">
                 <div class="card-header bg-red" style="color:#ffffff;">
-                    <h3>About Us</h3>
+                    <h3>Farmer's Market</h3>
                 </div>
                 <div class="card-body border-red">                        
-                    <p>
-                        We are a small family farm outside of Banks Oregon about 25 miles from Portland.
-                        For more than 14 years we have been bringing sustainably grown veggies, eggs, jams
-                        and goodies from our farm to you at local Farmers Markets and through our CSA (Community Supported Agriculture).
-                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">Hillsdale</a>
+                        </li>
+                        <li>
+                            <a href="#">Woodstock</a>
+                        </li>
+                        <li>
+                            <a href="#">Cannon beach</a>
+                        </li>
+                        <li>
+                            <a href="#">St. Johns</a>
+                        </li>
+                        <li>
+                            <a href="#">OHSU</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -72,33 +84,33 @@
                 <div class="card-body border-green">
                     @foreach (var review in Model)
                     {
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12">
-                            <p><strong>@Html.DisplayNameFor(model => model.author_name): </strong>@Html.DisplayFor(modelItem => review.author_name)</p>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <p><strong>@Html.DisplayNameFor(model => model.author_name): </strong>@Html.DisplayFor(modelItem => review.author_name)</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-                            <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                <!--<div class="d-flex justify-content-end">-->
+                                <p>
+                                    @for (int i = 0; i < review.rating; i++)
+                                    {
+                                        <img src="~/Content/Images/Icons/star.svg" class="filter-gold" />
+                                    }
+                                </p>
+                                <!--</div>-->
+                            </div>
                         </div>
-                        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-                            <!--<div class="d-flex justify-content-end">-->
-                            <p>
-                                @for (int i = 0; i < review.rating; i++)
-                                {
-                                    <img src="~/Content/Images/Icons/star.svg" class="filter-gold" />
-                                }
-                            </p>
-                        <!--</div>-->
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <p>@Html.DisplayFor(modelItem => review.text)</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12">
-                            <p>@Html.DisplayFor(modelItem => review.text)</p>
-                        </div>
-                    </div>
-                        }
-                    </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
