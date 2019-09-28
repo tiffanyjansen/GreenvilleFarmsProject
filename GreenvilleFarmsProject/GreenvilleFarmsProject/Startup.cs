@@ -3,7 +3,6 @@ using Owin;
 using GreenvilleFarmsProject.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Diagnostics;
 
 [assembly: OwinStartupAttribute(typeof(GreenvilleFarmsProject.Startup))]
 namespace GreenvilleFarmsProject
