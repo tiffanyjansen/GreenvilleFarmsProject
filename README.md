@@ -4,6 +4,7 @@ This project is being built for _Greenville Farms_ in _Forest Grove, OR_.
 ## Authors:
 * Tiffany Jansen
 * Gabriel Brehm
+* Stuart Ashenbrenner
 
 ## Steps to Run
 1. Clone Project

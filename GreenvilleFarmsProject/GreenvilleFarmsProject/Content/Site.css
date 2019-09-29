@@ -83,12 +83,13 @@ body {
 }
 
 .nav-item {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .nav-link {
     color: #ffffff;
-    width: 150px;
+    padding: 10px 20px;
+    /*width: 150px;*/
 }
 
 nav {
@@ -101,7 +102,7 @@ nav {
 }
 
 .active {
-    background-color: #2a7221;
+    background-color: #6FA341;
 }
 
 .border-success {
@@ -136,10 +137,10 @@ nav {
     padding:10px;
 }
 
-.container {
+/*.container {
     padding: 10px;
     margin: 10px;
-}
+}*/
 
 /*The image on the home page*/
 .image-bar {
@@ -237,9 +238,38 @@ nav {
     font-family: 'Berkshire Swash', cursive;
 }*/
 
+.center {
+    text-align: center;
+}
+
+#title {
+    font-family: 'Baloo Tamma', cursive;
+    color: #6FA341;
+    top: -43px;
+    position: relative;
+    width: 310px;
+    margin: auto;
+}
+#gift {
+    font-family: 'Arizonia', cursive;
+}
+
+#farm {
+    font-family: 'Baloo Tamma', cursive;
+}
+
 #profile {
     font-family: 'Berkshire Swash', cursive;
 
+}
+
+#content {
+    margin-top: -45px;
+}
+
+footer {
+    border-top: solid 1px #DDCCC2;
+    margin-top: 10px;
 }
 
 .card-header {
