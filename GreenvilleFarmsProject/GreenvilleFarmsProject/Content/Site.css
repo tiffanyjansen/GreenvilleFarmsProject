@@ -1,9 +1,12 @@
 ﻿/* ~The Styling for the Site~ */
 body {
-    /*font-size: 16px;*/
     background-color: #fffbfe;
     color: #000000;
     margin: 0;
+}
+
+#main.row {
+    margin-bottom: 32px;
 }
 
 /*new bootstrap colors*/
@@ -43,11 +46,11 @@ body {
 }
 
 .bg-green {
-    background-color: #2a7221;
+    background-color: #63A345;
 }
 
 .bg-red {
-    background-color: #7c0a02;
+    background-color: #6FA341;
 }
 
 .bg-grey {
@@ -63,11 +66,11 @@ body {
 }
 
 .border-green {
-    border-color: #2a7221;
+    border: solid 2px #63A345;
 }
 
 .border-red {
-    border-color: #7c0a02;
+    border: solid 2px #6FA341;
 }
 
 .border-grey {
@@ -76,38 +79,93 @@ body {
 /*end of bootstrap colors*/
 
 /*navbar*/
-.navbar {
-    margin: 0;
-    border: 0;
-    padding: 0;
+@media only screen and (min-width: 992px){
+    .navbar {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    #dropdown.navbar-nav {
+        display: none;
+    }
+
+    .nav-item {
+        font-size: 18px;
+    }
+
+    .navbar-nav .nav-link {
+        padding-left: 10px;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        padding: 10px 20px;
+    }
+
+    nav {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .navbar-nav a:hover {
+        background-color: #f8fff4;
+        color: #000000;
+    }
+
+    .active {
+        background-color: #6FA341;
+    }
+
+    .border-success {
+        border-color: #2a7221 !important;
+    }
 }
 
-.nav-item {
-    font-size: 18px;
+@media only screen and (max-width: 992px) {
+    .navbar {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav.ml-auto {
+        display: flex;
+    }
+
+    .navbar-nav .nav-link {
+        padding-left: 10px;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+        .nav-link:hover {
+            background-color: #f8fff4;
+            color: #000000;
+            font-size: 18px;
+        }
+
+    nav {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .active {
+        background-color: #6FA341;
+    }
+
+    .border-success {
+        border-color: #2a7221 !important;
+    }
 }
 
-.nav-link {
-    color: #ffffff;
-    padding: 10px 20px;
-    /*width: 150px;*/
-}
 
-nav {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.navbar-nav a:hover {
-    background-color: #f8fff4;
-    color: #000000;
-}
-
-.active {
-    background-color: #6FA341;
-}
-
-.border-success {
-    border-color: #2a7221 !important;
-}
 /*end of navbar*/
 
 
@@ -137,30 +195,6 @@ nav {
     padding:10px;
 }
 
-/*.container {
-    padding: 10px;
-    margin: 10px;
-}*/
-
-/*The image on the home page*/
-.image-bar {
-    background-image: url(Images/Barn.jpg);
-    background-position: 50% 27%;
-    background-color: #000000;
-    max-width: 100%;
-    height: 240px;
-    border: none;
-    padding: 0;
-    background-repeat: no-repeat;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-    .image-bar h1 {
-        text-align: center;
-        padding-top: 75px;
-        color: #ffffff;
-    }
-
 #map {
     width: 100%;
     height: 565px;
@@ -175,13 +209,14 @@ nav {
 @media only screen and (min-width: 1200px) {
     /* xl sized screens */
     .picture {
-        height: 550px;
+        height: 100%;
         width: 100%;
         object-fit: cover;
+        border: solid 3px #ffffff;
+        border-radius: 10px;
     }
 
     .info-box {
-        min-height: 550px;
         width: 100%;
     }
 }
@@ -189,48 +224,93 @@ nav {
     /* lg sized screens */
     .picture {
         width: 100%;
-        height: 650px;
+        height: 100%;
         object-fit: cover;
+        border: solid 3px #ffffff;
+        border-radius: 10px;
     }
 
     .info-box {
-        min-height: 450px;
+        width: 100%;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     /* md sized screens */
     .picture {
-        width: 100%;
-        height: 650px;
+        /*width: 100%;
+        height: 100%;
         object-fit: cover;
+        border: solid 3px #ffffff;
+        border-radius: 10px;*/
+        display: none !important;
     }
 
     .info-box {
-        min-height: 600px;
+        width: 100%;
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 768px) {
     /* sm sized screens */
     .picture {
-        width: 100%;
-        height: 525px;
+        /*width: 100%;
+        height: 100%;
         object-fit: cover;
+        border: solid 3px #ffffff;
+        border-radius: 10px;*/
+        display: none !important;
     }
 
     .info-box {
-        min-height: 510px;
+        width: 100%;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
     }
 }
 @media only screen and (max-width: 576px) {
     /* xs sized screens */
-    .picture {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
+    .picture {       
+        display: none !important;
     }
 
     .info-box {
-        
+        width: 100%;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin:0;
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+    #title h1 {
+        font-size: 30px;
+    }
+
+    #title {
+        top: -39px !important;
+    }
+
+    #content {
+        margin-top: -35px !important;
+    }
+
+    .home-image {
+        padding: 16px 16px 0 !important;
+    }
+
+    #footer {
+        display: none !important;
     }
 }
 
@@ -250,21 +330,35 @@ nav {
     width: 310px;
     margin: auto;
 }
+
 #gift {
     font-family: 'Arizonia', cursive;
 }
 
 #farm {
     font-family: 'Baloo Tamma', cursive;
+    color: #2a7221;
 }
 
 #profile {
     font-family: 'Berkshire Swash', cursive;
-
+    color: #6FA341;
 }
 
 #content {
     margin-top: -45px;
+}
+
+/* Background on Home Page */
+.home-image {
+    background-image: url(Images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding: 32px 32px 0;
+}
+
+li {
+    font-size: 18px;
 }
 
 footer {

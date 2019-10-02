@@ -4,52 +4,71 @@
 }
 <!--Initializing index.html as the active page.-->
 <a class="active"></a>
-<div id="content">
-    <div id="gift" class="center">
-        <h2>A Gift of Oregon</h2>
-    </div>
-    <!-- Row 1 -->
-    <div class="row">
-        <div class="col-xl-6">
-            <!-- Farmer's Markets -->
+<div id="content" class="home-image">
+    <div class="row justify-content-center" id="main">
+        <div class="col-lg-6 col-md-11 col-12">
             <div class="card border-red info-box">
                 <div class="card-header bg-red" style="color:#ffffff;">
                     <h3>Farmer's Markets</h3>
                 </div>
                 <div class="card-body border-red">
-                    <ul>
-                        <li>
-                            <a href="#">Hillsdale</a>
-                        </li>
-                        <li>
-                            <a href="#">Woodstock</a>
-                        </li>
-                        <li>
-                            <a href="#">Cannon beach</a>
-                        </li>
-                        <li>
-                            <a href="#">St. Johns</a>
-                        </li>
-                        <li>
-                            <a href="#">OHSU</a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-6 col-12">
+                            <h4>Sundays we're at:</h4>
+                            <ul>
+                                <li>
+                                    <a href="http://www.hillsdalefarmersmarket.com/" target="_blank">Hillsdale</a>
+                                </li>
+                                <li>
+                                    <a href="https://woodstockmarketpdx.com/" target="_blank">Woodstock</a>
+                                </li>
+                            </ul>
+                        </div>                    
+                        <div class="col-lg-12 col-sm-6 col-12">
+                            <h4>Tuesdays we're at:</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://www.cannonbeach.org/listing/cannon-beach-farmers-market/2766/" target="_blank">Cannon beach</a>
+                                </li>
+                                <li>
+                                    <a href="https://lloydfarmersmkt.net/" target="_blank">Lloyd</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-6 col-12">
+                            <h4>Wednesdays we're at:</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://www.forestgrove-or.gov/community/page/farmers-market" target="_blank">Forest Grove</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 col-sm-6 col-12">
+                            <h4>Saturdays we're at:</h4>
+                            <ul>
+                                <li>
+                                    <a href="http://www.stjohnsopportunity.org/stjohnsfarmersmarket" target="_blank">St. Johns</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-6">
-            <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[0].PictureName" />
+        <div class="col-lg-6">
+            <img class="d-block picture" src="~/Content/Images/Barn.jpg" />
         </div>
     </div>
-    <div class="row">
-        <div class="col-xl-6">
-            <img class="d-block picture" src="~/Content/Images/Picture_Uploads/@ViewBag.Pictures[1].PictureName" />
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <img class="d-block picture" src="~/Content/Images/Tractor_Dog.jpg" />
         </div>
-        <div class="col-xl-6">
-            <!--Google Reviews-->
+        <div class="col-lg-6 col-md-11 col-12">
             <div class="card border-green info-box">
                 <div class="card-header bg-green" style="color:#ffffff;">
-                    <h4>Google Reviews:</h4>
+                    <h3>Google Reviews</h3>
                 </div>
                 <div class="card-body border-green">
                     @foreach (var review in Model)
@@ -64,14 +83,12 @@
                                 <p><strong>@Html.DisplayFor(modelItem => review.relative_time_description)</strong></p>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-                                <!--<div class="d-flex justify-content-end">-->
                                 <p>
                                     @for (int i = 0; i < review.rating; i++)
                                     {
                                         <img src="~/Content/Images/Icons/star.svg" class="filter-gold" />
                                     }
                                 </p>
-                                <!--</div>-->
                             </div>
                         </div>
                         <div class="row">
