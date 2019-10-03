@@ -46,11 +46,13 @@ body {
 }
 
 .bg-green {
-    background-color: #63A345;
+    /*background-color: #63A345;*/
+    background-image: linear-gradient(to right, #68A74E, #DFD6D1);
 }
 
 .bg-red {
-    background-color: #6FA341;
+    /*background-color: #6FA341;*/
+    background-image: linear-gradient(to right, #68A74E, #DFD6D1);
 }
 
 .bg-grey {
@@ -66,11 +68,11 @@ body {
 }
 
 .border-green {
-    border: solid 2px #63A345;
+    border: solid 3px #68A74E;
 }
 
 .border-red {
-    border: solid 2px #6FA341;
+    border: solid 3px #68A74E;
 }
 
 .border-grey {
@@ -164,8 +166,6 @@ body {
         border-color: #2a7221 !important;
     }
 }
-
-
 /*end of navbar*/
 
 
@@ -364,8 +364,13 @@ li {
 footer {
     border-top: solid 1px #DDCCC2;
     margin-top: 10px;
+    background-color: inherit;
 }
 
 .card-header {
     font-family: 'Averia Libre', cursive;
+}
+
+.container {
+    margin-bottom: 40px;
 }

@@ -3,7 +3,9 @@
     {
         if ($(this).prop('href') == window.location.href)
         {
-            $(this).addClass('active');
+            if ($(this).hasClass("nav-link")) {
+                $(this).addClass('active');
+            }           
         }
     });
 });

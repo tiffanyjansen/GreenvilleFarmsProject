@@ -82,10 +82,10 @@
         </div>
         @RenderBody()
     </div>
-    <footer>
+    <footer class="fixed-bottom">
         <div class="row" style="margin:0;">
             <div class="col-sm-4" id="footer"><span id="gift"><strong>A Gift of Oregon</strong></span></div>
-            <div class="col-sm-4 col-12 d-flex justify-content-center"><span id="farm">Greenville Farms</span></div>
+            <div class="col-sm-4 col-12 d-flex justify-content-center"><a href="@Url.Action("Login", "Account")"><span id="farm">Greenville Farms</span></a></div>
             <div class="col-sm-4 d-flex justify-content-end" id="footer"><span id="gift"><strong>Made on the Farm</strong></span></div >
         </div>
     </footer>
