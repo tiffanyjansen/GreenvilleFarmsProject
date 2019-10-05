@@ -239,26 +239,20 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     /* md sized screens */
     .picture {
-        /*width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: solid 3px #ffffff;
-        border-radius: 10px;*/
         display: none !important;
     }
 
     .info-box {
         width: 100%;
     }
+
+    /*#column-padding {
+        margin-bottom: 30px !important;
+    }*/
 }
 @media only screen and (min-width: 576px) and (max-width: 768px) {
     /* sm sized screens */
     .picture {
-        /*width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: solid 3px #ffffff;
-        border-radius: 10px;*/
         display: none !important;
     }
 
@@ -269,6 +263,10 @@ body {
     h4 {
         font-size: 18px;
         font-weight: bold;
+    }
+
+    #column-padding {
+        margin-bottom: 30px !important;
     }
 }
 @media only screen and (max-width: 576px) {
@@ -313,6 +311,10 @@ body {
 
     #footer {
         display: none !important;
+    }
+
+    #column-padding {
+        margin-bottom: 30px !important;
     }
 }
 
