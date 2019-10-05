@@ -10,8 +10,8 @@ body {
 }
 
 /*new bootstrap colors*/
-.btn-green{
-    background-color: #2a7221;
+.btn-green {
+    background-color: #68A74E;
     color: #ffffff;
 }
     .btn-green:hover {
@@ -21,7 +21,7 @@ body {
     }
 
 .btn-red {
-    background-color: #7c0a02;
+    background-color: #68A74E;
     color: #ffffff;
 }
     .btn-red:hover {
@@ -48,11 +48,13 @@ body {
 .bg-green {
     /*background-color: #63A345;*/
     background-image: linear-gradient(to right, #68A74E, #DFD6D1);
+    color: #FFFFFF;
 }
 
 .bg-red {
     /*background-color: #6FA341;*/
     background-image: linear-gradient(to right, #68A74E, #DFD6D1);
+    color: #FFFFFF;
 }
 
 .bg-grey {
@@ -197,7 +199,7 @@ body {
 
 #map {
     width: 100%;
-    height: 565px;
+    min-height: 400px;
     border: 1px solid #2a7221;
     border-radius: 5px;
 }
@@ -351,10 +353,26 @@ body {
 
 /* Background on Home Page */
 .home-image {
-    background-image: url(Images/background.jpg);
+    background-image: url(Images/Backgrounds/background.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     padding: 32px 32px 0;
+}
+
+/* Background on About Page */
+.about-image {
+    background-image: url(Images/Backgrounds/strawberries.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding: 32px 32px;
+}
+
+/* Background on Contact Page */
+.contact-image {
+    background-image: url(Images/Backgrounds/turnips.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding: 32px 32px;
 }
 
 li {

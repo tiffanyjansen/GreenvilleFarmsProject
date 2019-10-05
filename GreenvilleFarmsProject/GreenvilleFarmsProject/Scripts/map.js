@@ -60,7 +60,7 @@ function initMap() {
         '<h4>Maller\'s Mini Barn</h4>' +
         '<h7>HWY 26 At NW Maller Rd, 97106 Banks, United States</h7>' +
         '<br>' +
-        '<a href="https://goo.gl/maps/EmZq13hhyQrhkdRn6" target="_blank">Get Directions</a>'
+        '<a href="https://goo.gl/maps/SNu17Sf7QMBkmzeEA" target="_blank">Get Directions</a>'
     '</div>' +
         '</div>';
 

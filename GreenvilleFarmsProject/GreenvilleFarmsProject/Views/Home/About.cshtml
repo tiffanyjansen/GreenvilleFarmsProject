@@ -4,15 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>About</h2>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-12 order-xl-first col-sm-6 col-xs-12">
-            <br />
+<div id="content" class="about-image">
+    <div class="row" id="main">
+        <div class="col-12">
             <!-- About Us -->
-            <div class="card border-red info-box">
-                <div class="card-header bg-red" style="color:#ffffff;">
+            <div class="card border-red">
+                <div class="card-header bg-red">
                     <h3>About Us</h3>
                 </div>
                 <div class="card-body border-red">
@@ -25,4 +22,33 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="d-flex justify-content-end">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <!-- About Us -->
+            <div class="card border-red">
+                <div class="card-header bg-green">
+                    <h3>More Info About Us</h3>
+                </div>
+                <div class="card-body border-green">
+                    <p>
+                        <strong>This is placeholder text</strong><br /><br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Id leo in vitae turpis massa sed elementum tempus. Mauris pellentesque pulvinar pellentesque habitant morbi
+                        tristique senectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales. Nunc faucibus a
+                        pellentesque sit amet porttitor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!--Google Map API Scripts-->
+<script src="~/Scripts/map.js"></script>
+<script src="@ViewBag.googleAPI" async defer></script>
