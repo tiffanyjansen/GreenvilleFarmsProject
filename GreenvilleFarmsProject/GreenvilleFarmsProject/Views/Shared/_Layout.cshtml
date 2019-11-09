@@ -56,9 +56,9 @@
                     <strong>
                         @Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "nav-link" })
                     </strong>
-                </li>                
+                </li>
             </ul>
-            <ul class="nav" style="width:160px;">  
+            <ul class="nav" style="width:160px;">
                 <li class="nav-item dropdown bg-dark">
                     <a class="nav-link dropdown-toggle ml-auto" id="navbarDropdown" style="display:none;" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"></a>
                     <div class="dropdown-menu bg-dark ml-auto" aria-labelledby="navbarDropdown">
@@ -71,13 +71,43 @@
                         <strong>
                             @Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "nav-link" })
                         </strong>
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <strong><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">LOG OFF</a></strong>
+                            }
+                            <strong>@Html.ActionLink("MY PROFILE", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link" })</strong>
+                        }
                     </div>
                 </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <li class="nav-item">
+                            <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">
+                                <strong>
+                                    LOG OFF
+                                </strong>
+                            </a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <strong>
+                            @Html.ActionLink("MY PROFILE", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+                        </strong>
+                    </li>
+                }
             </ul>
         </div>
     </nav>
     <div class="container">
-        <div class="center" id="title">
+        <div class="text-center" id="title">
             <h1>Greenville Farms</h1>
         </div>
         @RenderBody()

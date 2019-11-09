@@ -1,0 +1,178 @@
+﻿body {
+  background-color: #fffbfe;
+  color: #000000;
+  margin: 0; }
+
+.btn-green {
+  background-color: #68A74E;
+  color: #FFFFFF; }
+  .btn-green:hover {
+    color: #FFFFFF;
+    border-color: #000000;
+    background-color: #250902; }
+
+.bg-green {
+  background-image: linear-gradient(to right, #68A74E, #DFD6D1);
+  color: #FFFFFF; }
+
+.bg-grey {
+  background-color: #817f75; }
+
+.border-green {
+  border: solid 3px #68A74E; }
+
+.filter-gold {
+  filter: invert(88%) sepia(25%) saturate(5633%) hue-rotate(1deg) brightness(106%) contrast(106%); }
+
+.card-header {
+  font-family: 'Averia Libre', cursive; }
+
+.container {
+  margin-bottom: 40px; }
+
+#title {
+  font-family: 'Baloo Tamma', cursive;
+  color: #6FA341;
+  top: -43px;
+  position: relative;
+  width: 310px;
+  margin: auto; }
+
+#content {
+  margin-top: -45px; }
+
+li {
+  font-size: 18px; }
+
+.navbar {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  .navbarnav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .navbar .border-success {
+    border-color: #2a7221 !important; }
+  .navbar .active {
+    background-color: #6FA341; }
+  .navbar .navbar-nav .nav-link {
+    padding-left: 10px; }
+  .navbar .nav-link {
+    color: #FFFFFF;
+    padding: 10px 20px; }
+  @media only screen and (min-width: 992px) {
+    .navbar #dropdown.navbar-nav {
+      display: none; }
+    .navbar .nav-item {
+      font-size: 18px; }
+    .navbar .navbar-nav a:hover {
+      background-color: #f8fff4;
+      color: #000000; } }
+  @media only screen and (max-width: 992px) {
+    .navbar .navbar-nav {
+      display: none; }
+    .navbar .navbar-nav.ml-auto {
+      display: flex; }
+    .navbar .nav-link {
+      font-size: 18px; }
+      .navbar .nav-link:hover {
+        background-color: #f8fff4;
+        color: #000000;
+        font-size: 18px; } }
+
+.form-control:focus {
+  border-color: #2a7221;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(42, 114, 33, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(42, 114, 33, 0.6); }
+
+.field-validation-error {
+  color: #f00000; }
+
+.input-validation-error {
+  border: 1px solid #f00000;
+  background-color: #f0e0e0; }
+
+.jumbotron {
+  margin: 0 10px 20px;
+  padding: 15px 15px 5px; }
+
+.placeholder {
+  padding: 10px; }
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  height: inherit; }
+
+#map {
+  border: 1px solid #68A74E;
+  border-radius: 5px;
+  left: 15px;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 30px);
+  position: absolute; }
+
+@media only screen and (min-width: 992px) {
+  .picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 3px #000000;
+    border-radius: 10px; } }
+
+@media only screen and (max-width: 992px) {
+  .picture {
+    display: none !important; } }
+
+.info-box {
+  width: 100%; }
+
+@media only screen and (max-width: 768px) {
+  h4 {
+    font-size: 18px;
+    font-weight: bold; }
+  #column-padding {
+    margin-bottom: 30px !important; } }
+
+@media only screen and (max-width: 768px) and (max-width: 576px) {
+  h3 {
+    font-size: 22px;
+    margin: 0; }
+  li {
+    font-size: 14px; }
+  #title h1 {
+    font-size: 30px; }
+  #title {
+    top: -39px !important; }
+  #content {
+    margin-top: -35px !important; }
+  .home-image {
+    padding: 16px 16px 0 !important; }
+  #footer {
+    display: none !important; } }
+
+.background {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 32px 32px 0; }
+  .background.home-image {
+    background-image: url(Images/Backgrounds/background.jpg); }
+  .background.about-image {
+    background-image: url(Images/Backgrounds/strawberries.jpg); }
+  .background.contact-image {
+    background-image: url(Images/Backgrounds/turnips.jpg); }
+
+footer {
+  border-top: solid 1px #DDCCC2;
+  margin-top: 10px;
+  background-color: inherit; }
+  footer #gift {
+    font-family: 'Arizonia', cursive; }
+  footer #farm {
+    font-family: 'Baloo Tamma', cursive;
+    color: #2a7221; }
+
+#profile {
+  font-family: 'Berkshire Swash', cursive;
+  color: #6FA341; }
